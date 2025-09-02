@@ -61,7 +61,7 @@ export function Hero() {
           </div>
 
           {/* Right Image */}
-          <div className="w-[50%] relative">
+          <div className="hidden md:block lg:block w-[50%] relative">
             <div className="relative z-10 w-180 h-152">
               {/* <div className="w-full h-96 lg:h-[500px] bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl flex items-center justify-center relative overflow-hidden"> */}
               {/* Soft pink circular background element */}

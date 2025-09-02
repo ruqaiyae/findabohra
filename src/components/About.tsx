@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Hearts } from "./ui/Hearts";
 
 export function About() {
   return (
@@ -44,13 +44,7 @@ export function About() {
       </div>
       {/* Decorative hearts */}
       <div className="absolute bottom-0 right-0">
-        <Image
-          src="/hearts.png"
-          alt="hearts"
-          width={200}
-          height={200}
-          className="w-25 h-25 md:w-48 md:h-48 object-contain"
-        />
+        <Hearts />
       </div>
     </section>
   );
