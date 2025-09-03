@@ -8,7 +8,11 @@ import {
   BsThreeDotsVertical,
   BsEnvelope,
 } from "react-icons/bs";
-import { MdOutlineUpgrade, MdOutlineWork } from "react-icons/md";
+import {
+  MdOutlineUpgrade,
+  MdOutlineWork,
+  MdChatBubbleOutline,
+} from "react-icons/md";
 import { LiaCheckDoubleSolid } from "react-icons/lia";
 import { GrAttachment } from "react-icons/gr";
 import { PiPaperPlaneRightFill } from "react-icons/pi";
@@ -17,6 +21,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { BiCool } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
 import {
   FaRegHeart,
   FaHeart,
@@ -47,6 +52,7 @@ export {
   BsEnvelope,
   MdOutlineUpgrade,
   MdOutlineWork,
+  MdChatBubbleOutline,
   LiaCheckDoubleSolid,
   GrAttachment,
   PiPaperPlaneRightFill,
@@ -74,4 +80,5 @@ export {
   FaPray,
   GiBigDiamondRing,
   FaRegClock,
+  CgProfile,
 };
