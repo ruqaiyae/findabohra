@@ -1,67 +1,45 @@
-import Image from "next/image";
-import { FaImage } from "./icons";
+import React from "react";
 
-interface MessageItemProps {
-  avatar?: string;
+type MessageItemProps = {
   name: string;
   time: string;
   message: string;
   notification?: number;
-}
+};
 
-const MessageItem: React.FC<MessageItemProps> = ({
-  avatar,
+export default function MessageItem({
   name,
   time,
   message,
   notification,
-}) => {
+}: MessageItemProps) {
   return (
-    <div className="flex gap-1 sm:gap-1.5 md:gap-2">
-      {avatar ? (
-        <Image
-          src={avatar}
-          alt={`${name}'s avatar`}
-          width={48}
-          height={40}
-          className="w-8 h-7 sm:w-10 sm:h-8 md:w-12 md:h-10 rounded-full object-cover my-1 sm:my-1.5 md:my-2"
-        />
-      ) : (
-        <div className="w-8 h-5 sm:w-10 sm:h-8 md:w-12 md:h-10 rounded-full bg-gray-200 my-1 sm:my-1.5 md:my-2" />
-      )}
-      <div className="flex flex-col justify-center my-1 sm:my-1.5 md:my-2 w-full">
-        <div className="flex justify-between">
-          <p className="text-[8px] sm:text-[9px] md:text-[10px] font-semibold">
-            {name}
-          </p>
-          <p className="text-[6px] sm:text-[7px] md:text-[8px] text-gray-500">
-            {time}
-          </p>
+    <div className="flex items-center justify-between py-1 sm:py-1.5 md:py-2 px-2 sm:px-3 md:px-4 bg-white rounded-lg shadow-sm border border-gray-100 mb-1 sm:mb-1.5 md:mb-2">
+      <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-1">
+        <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-purple-200 rounded-full flex items-center justify-center">
+          <span className="text-[8px] sm:text-[9px] md:text-[10px] font-semibold text-purple-700">
+            {name.charAt(0).toUpperCase()}
+          </span>
         </div>
-        <div className="flex justify-between">
-          {message === "Image" ? (
-            <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2">
-              <FaImage className="text-gray-400 text-[8px] sm:text-[10px] md:text-xs" />
-              <p className="text-[8px] sm:text-[9px] md:text-[10px] text-gray-500">
-                {message}
-              </p>
-            </div>
-          ) : (
-            <p className="text-[8px] sm:text-[9px] md:text-[10px] text-gray-500">
-              {message}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between">
+            <p className="text-[8px] sm:text-[9px] md:text-[10px] font-semibold text-gray-900 truncate">
+              {name}
             </p>
-          )}
-          {notification && (
-            <div className="bg-[#67295F] px-[4px] py-[1px] sm:px-[5px] sm:py-[1.5px] md:px-[6.5px] md:py-[2px] rounded-full">
-              <p className="text-[6px] sm:text-[7px] md:text-[8px] text-white">
-                {notification}
-              </p>
-            </div>
-          )}
+            <p className="text-[6px] sm:text-[7px] md:text-[8px] text-gray-500 ml-2">
+              {time}
+            </p>
+          </div>
+          <p className="text-[7px] sm:text-[8px] md:text-[9px] text-gray-600 truncate">
+            {message}
+          </p>
         </div>
       </div>
+      {notification && notification > 0 && (
+        <div className="bg-red-500 text-white text-[6px] sm:text-[7px] md:text-[8px] rounded-full w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex items-center justify-center font-semibold">
+          {notification}
+        </div>
+      )}
     </div>
   );
-};
-
-export default MessageItem;
+}
