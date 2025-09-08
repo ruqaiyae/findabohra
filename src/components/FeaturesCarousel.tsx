@@ -122,7 +122,7 @@ const carouselItems = [
     title: "Message Priority",
     description:
       "Want your message to be seen first? With message priority, your texts are placed at the top of their inbox — increasing visibility and response chances, especially in busy conversations.",
-    image: "/message-priority-feature.png",
+    image: "message-priority-feature",
     phoneContent: {
       title: "Chat",
       subtitle: "Keep the Spark, Skip the Sharks!",

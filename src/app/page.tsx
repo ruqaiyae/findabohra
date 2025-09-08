@@ -4,6 +4,7 @@ import { About } from "@/components/About";
 import { FeaturesCarousel } from "@/components/FeaturesCarousel";
 import { HowItWorks } from "@/components/HowItWorks";
 import { CallToAction } from "@/components/CallToAction";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <FeaturesCarousel />
       <HowItWorks />
       <CallToAction />
+      <Footer />
     </div>
   );
 }

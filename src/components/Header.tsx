@@ -51,7 +51,7 @@ export function Header() {
               Blog
             </a>
             <a
-              href="#contact"
+              href="#footer"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
               Contact
