@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   keywords:
     "Dawoodi Bohra, dating app, marriage, matrimony, matrimonial app, community, Bohra singles, cultural dating, traditional values, modern love",
   authors: [{ name: "Find a Bohra" }],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   openGraph: {
     title: title,
     description: description,
