@@ -7,15 +7,7 @@ import { PiPaperPlaneRightFill } from "react-icons/pi";
 import MessageItem from "../MessageItem";
 import { PhoneMockup } from "../ui/PhoneMockup";
 import PhoneNavbar from "../ui/PhoneNavbar";
-import { CarouselItem } from "./typeLib";
-
-type MessageItem = {
-  name: string;
-  image: string;
-  time: string;
-  message: string;
-  notification?: number;
-};
+import { CarouselItem, MessageItem as MessageItemType } from "./typeLib";
 
 type Slide1Props = {
   currentItem: CarouselItem;
@@ -49,7 +41,7 @@ export default function Slide1({ currentItem }: Slide1Props) {
           </p>
 
           {currentItem.phoneContent?.messageContent?.map(
-            (message: MessageItem) => (
+            (message: MessageItemType) => (
               <MessageItem
                 key={message.time}
                 image={message.image}

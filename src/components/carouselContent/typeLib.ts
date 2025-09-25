@@ -15,6 +15,7 @@ type Tip = {
 
 type MessageItem = {
   name: string;
+  image: string;
   time: string;
   message: string;
   notification?: number;

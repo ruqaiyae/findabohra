@@ -60,7 +60,7 @@ export default function Slide2({ currentItem }: Slide2Props) {
                 className="bg-white rounded-lg p-2 shadow-sm text-center"
               >
                 <Image
-                  src={profile.image}
+                  src={profile.image || "/profile-circle.png"}
                   alt={profile.name}
                   width={50}
                   height={50}

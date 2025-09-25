@@ -190,32 +190,38 @@ const carouselItems = [
           id: 1,
           message: "Sarah liked your profile! Tap to learn more.",
           date: "09-22-2025",
+          type: "like" as const,
         },
         {
           id: 2,
           message: "Zainab liked your profile! Tap to learn more.",
           date: "09-18-2025",
+          type: "like" as const,
         },
         {
           id: 3,
           message: "You have a new message from Sakina! Check it out!",
           date: "09-05-2025",
+          type: "message" as const,
         },
         {
           id: 4,
           message: "Khadija liked your profile! Tap to learn more.",
           date: "09-17-2025",
+          type: "like" as const,
         },
 
         {
           id: 5,
           message: "You have a new message from Zahra! Check it out!",
           date: "09-05-2025",
+          type: "message" as const,
         },
         {
           id: 6,
           message: "You have a new message from Fatema! Check it out!",
           date: "08-24-2025",
+          type: "message" as const,
         },
       ],
     },

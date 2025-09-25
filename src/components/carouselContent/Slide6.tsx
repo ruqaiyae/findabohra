@@ -1,19 +1,9 @@
 import { PhoneMockup } from "../ui/PhoneMockup";
 import { FaBell, GoArrowLeft } from "../icons";
-
-type NotificationItem = {
-  id: number;
-  message: string;
-  date: string;
-};
+import { CarouselItem } from "./typeLib";
 
 type Slide6Props = {
-  currentItem: {
-    phoneContent: {
-      title: string;
-      notifications: NotificationItem[];
-    };
-  };
+  currentItem: CarouselItem;
 };
 
 export default function Slide6({ currentItem }: Slide6Props) {
@@ -32,7 +22,7 @@ export default function Slide6({ currentItem }: Slide6Props) {
 
       {/* Notifications List */}
       <div className="flex-1 px-3 py-2 space-y-2 overflow-y-auto">
-        {currentItem.phoneContent?.notifications.map((notification) => (
+        {currentItem.phoneContent?.notifications?.map((notification) => (
           <div
             key={notification.id}
             className="bg-white rounded-lg p-2 shadow-sm border border-purple-100"
