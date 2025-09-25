@@ -1,5 +1,7 @@
 type Profile = {
   name: string;
+  image?: string;
+  bgImage?: string;
   location: string;
   time?: string;
   about?: string;
@@ -18,6 +20,13 @@ type MessageItem = {
   notification?: number;
 };
 
+type NotificationItem = {
+  id: number;
+  message: string;
+  date: string;
+  type: "like" | "message";
+};
+
 type ChatContent = {
   name: string;
   messages: string[];
@@ -31,13 +40,13 @@ type PhoneContent = {
   description?: string;
   tips?: Tip[];
   messageContent?: MessageItem[];
+  notifications?: NotificationItem[];
 };
 
 type CarouselItem = {
   id: number;
   title: string;
   description: string;
-  image: string;
   phoneContent?: PhoneContent;
   chatContent?: ChatContent;
 };
@@ -46,6 +55,7 @@ export type {
   Profile,
   Tip,
   MessageItem,
+  NotificationItem,
   ChatContent,
   PhoneContent,
   CarouselItem,

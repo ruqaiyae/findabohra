@@ -7,21 +7,23 @@ export function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
           {/* Left Content */}
-          <div className="w-[50%] space-y-8">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Find Your{" "}
-                <span className="bg-gradient-to-b from-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent">
-                  Rishta
-                </span>
-                ,
+          <div className="w-[40%] space-y-8">
+            <div>
+              <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
+                Modern Matchmaking,
                 <br />
-                <span className="text-gray-900">The Bohra Way.</span>
+                Rooted in Tradition
               </h1>
-              <p className="text-l text-gray-600 leading-relaxed">
-                Join thousands of Bohras who have found meaningful <br />
-                connections through our trusted platform. <br />
-                Start your journey to find your ideal match today.
+              <p className="text-lg font-semibold mb-2 text-gray-600 leading-relaxed">
+                Your match, your way!
+              </p>
+              <p className=" text-gray-600 leading-relaxed">
+                FindABohra brings the Dawoodi Bohra community together with
+                curated matches, complete privacy, and meaningful connections.
+                Modern, intentional, and true to you!
+              </p>
+              <p className="text-lg font-semibold mt-2 text-gray-600 leading-relaxed">
+                Sign up today - your forever could start here. 💕
               </p>
             </div>
 
@@ -63,26 +65,6 @@ export function Hero() {
           {/* Right Image */}
           <div className="hidden md:block lg:block w-[50%] relative">
             <div className="relative z-10 w-180 h-152">
-              {/* <div className="w-full h-96 lg:h-[500px] bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl flex items-center justify-center relative overflow-hidden"> */}
-              {/* Soft pink circular background element */}
-              {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-200 rounded-full opacity-30"></div> */}
-
-              {/* <div className="text-center text-gray-500 relative z-10">
-                  <svg
-                    className="w-24 h-24 mx-auto mb-4 text-purple-300"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p className="text-lg">Bohra Couple Image</p>
-                  <p className="text-sm">Placeholder for hero image</p>
-                </div> */}
-
               <Image
                 src="/hero-heart.png"
                 alt="hero-image"
@@ -102,8 +84,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-      {/* </div> */}
-      {/* </div> */}
     </section>
   );
 }

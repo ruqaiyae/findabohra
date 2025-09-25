@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function CallToAction() {
   return (
     <section className="relative w-full py-20">
@@ -24,11 +26,16 @@ export function CallToAction() {
 
         {/* Right Image */}
         <div className="relative order-1">
-          <div className="w-full h-86 lg:h-[500px] bg-gradient-to-br from-blue-100 to-green-100 rounded-2xl flex items-center justify-center">
-            <div className="text-center text-gray-500">
-              <p className="text-lg">Placeholder</p>
-            </div>
-          </div>
+          <Image
+            src="/call-to-action.png"
+            alt="call-to-action"
+            width={500}
+            height={500}
+            className="w-full h-full rounded-2xl object-cover"
+          />
+          {/* <div className="w-full h-86 lg:h-[500px] bg-gradient-to-br from-blue-100 to-green-100 rounded-2xl flex items-center justify-center"> */}
+
+          {/* </div> */}
         </div>
       </div>
     </section>

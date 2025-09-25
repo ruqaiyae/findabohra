@@ -11,6 +11,7 @@ import { CarouselItem } from "./typeLib";
 
 type MessageItem = {
   name: string;
+  image: string;
   time: string;
   message: string;
   notification?: number;
@@ -51,6 +52,7 @@ export default function Slide1({ currentItem }: Slide1Props) {
             (message: MessageItem) => (
               <MessageItem
                 key={message.time}
+                image={message.image}
                 name={message.name}
                 time={message.time}
                 message={message.message}
