@@ -42,6 +42,7 @@ import {
 } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { GiBigDiamondRing } from "react-icons/gi";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 // Export all icons
 export {
@@ -83,4 +84,5 @@ export {
   FaRegClock,
   CgProfile,
   FaBell,
+  RxHamburgerMenu,
 };
