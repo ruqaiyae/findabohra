@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   CiLineHeight,
   LuGraduationCap,
@@ -28,7 +29,17 @@ export default function Slide4({ currentItem }: Slide4Props) {
         {/* Profile Picture */}
         <div className="w-[90%] h-38 bg-gray-300 rounded-lg mb-3 absolute -top-12 left-1/2 -translate-x-1/2">
           {/* Profile image placeholder */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 rounded-lg" />
+          {profile.image && (
+            <Image
+              src={profile.image}
+              alt={profile.name}
+              width={50}
+              height={50}
+              className="absolute inset-0 w-full h-full rounded-lg object-cover"
+            />
+          )}
+
+          {/* <div className=" bg-gradient-to-b from-transparent to-black/20 rounded-lg" /> */}
         </div>
 
         {/* Profile Information */}

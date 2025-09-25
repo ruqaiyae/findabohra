@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HiMiniXMark, HiHeart } from "react-icons/hi2";
 import { PhoneMockup } from "../ui/PhoneMockup";
 import PhoneNavbar from "../ui/PhoneNavbar";
@@ -23,15 +24,33 @@ export default function Slide3({ currentItem }: Slide3Props) {
           <div className="relative mb-4 mx-3">
             {/* Background Image */}
             <div className="w-[90%] h-38 mx-auto bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg" />
+              {profiles?.[0]?.bgImage && (
+                <Image
+                  src={profiles[0].bgImage}
+                  alt={profiles[0].name}
+                  width={50}
+                  height={50}
+                  className="w-full h-full rounded-lg object-cover"
+                />
+              )}
             </div>
 
             {/* Foreground Image */}
-            <div className="absolute top-[-5px] left-[-55px] w-[90%] h-36 rotate-[-3deg] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden">
+            <div className="absolute top-[-5px] left-[-45px] w-[90%] h-36 rotate-[-3deg] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden">
               {/* Woman's face placeholder */}
-              <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg relative">
+
+              <div className="relative">
+                {profiles?.[0]?.image && (
+                  <Image
+                    src={profiles[0].image}
+                    alt={profiles[0].name}
+                    width={50}
+                    height={50}
+                    className="w-full h-full rounded-lg object-cover"
+                  />
+                )}
                 {/* X icon overlay */}
-                <div className="absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <div className="absolute top-1/2 left-[40%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-full flex items-center justify-center shadow-lg">
                   <HiMiniXMark className="text-[#67295F] text-6xl font-bold p-1" />
                 </div>
               </div>
@@ -49,7 +68,9 @@ export default function Slide3({ currentItem }: Slide3Props) {
 
             {/* About Section */}
             <div className="mb-3">
-              <h2 className="text-[10px] font-bold text-gray-800 mb-1">About</h2>
+              <h2 className="text-[10px] font-bold text-gray-800 mb-1">
+                About
+              </h2>
               <p className="text-[9px] text-gray-600 leading-relaxed">
                 {profiles?.[0]?.about}
               </p>
@@ -79,15 +100,32 @@ export default function Slide3({ currentItem }: Slide3Props) {
             <div className="relative mb-4 mx-3">
               {/* Background Image */}
               <div className="w-[90%] h-38 mx-auto bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg"></div>
+                {profiles?.[1]?.bgImage && (
+                  <Image
+                    src={profiles[1].bgImage}
+                    alt={profiles[1].name}
+                    width={50}
+                    height={50}
+                    className="w-full h-full rounded-lg object-cover"
+                  />
+                )}
               </div>
 
               {/* Foreground Image */}
-              <div className="absolute top-[-5px] right-[-55px] w-[90%] h-36 rotate-[3deg] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden">
+              <div className="absolute top-[-5px] right-[-45px] w-[90%] h-36 rotate-[3deg] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden">
                 {/* Man's face placeholder */}
-                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg relative">
+                <div className="relative">
+                  {profiles?.[1]?.image && (
+                    <Image
+                      src={profiles[1].image}
+                      alt={profiles[1].name}
+                      width={50}
+                      height={50}
+                      className="w-full h-full rounded-lg object-cover"
+                    />
+                  )}
                   {/* X icon overlay */}
-                  <div className="absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-1/2 bg-[#B23AA8] rounded-full flex items-center justify-center shadow-lg">
+                  <div className="absolute top-1/2 left-[60%] -translate-x-1/2 -translate-y-1/2 bg-[#B23AA8] rounded-full flex items-center justify-center shadow-lg">
                     <HiHeart className="text-white text-6xl font-bold p-2" />
                   </div>
                 </div>
@@ -105,7 +143,9 @@ export default function Slide3({ currentItem }: Slide3Props) {
 
               {/* About Section */}
               <div className="mb-3">
-                <h2 className="text-[10px] font-bold text-gray-800 mb-1">About</h2>
+                <h2 className="text-[10px] font-bold text-gray-800 mb-1">
+                  About
+                </h2>
                 <p className="text-[9px] text-gray-600 leading-relaxed">
                   {profiles?.[1]?.about}
                 </p>

@@ -38,6 +38,7 @@ import {
   FaExclamationTriangle,
   FaPray,
   FaRegClock,
+  FaBell,
 } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import { GiBigDiamondRing } from "react-icons/gi";
@@ -81,4 +82,5 @@ export {
   GiBigDiamondRing,
   FaRegClock,
   CgProfile,
+  FaBell,
 };

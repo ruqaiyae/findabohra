@@ -38,7 +38,7 @@ export function Header() {
             >
               Features
             </a>
-            <a
+            {/* <a
               href="#testimonials"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
@@ -49,7 +49,7 @@ export function Header() {
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
               Blog
-            </a>
+            </a> */}
             <a
               href="#footer"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"

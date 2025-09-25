@@ -2,41 +2,53 @@
 
 import { useState, useEffect } from "react";
 import { Hearts } from "./ui/Hearts";
+import Slide0 from "./carouselContent/Slide0";
 import Slide1 from "./carouselContent/Slide1";
 import Slide2 from "./carouselContent/Slide2";
 import Slide3 from "./carouselContent/Slide3";
 import Slide4 from "./carouselContent/Slide4";
 import Slide5 from "./carouselContent/Slide5";
+import Slide6 from "./carouselContent/Slide6";
 import FeatureDescription from "./carouselContent/FeatureDescription";
 
 const carouselItems = [
   {
+    id: 0,
+    title: "Tradition Meets Modern",
+    description:
+      "Rooted in culture, built for today. The best of both worlds in one app.",
+  },
+  {
     id: 1,
     title: "Chat for Free",
-    description: `Welcome to your inbox — where sparks turn into conversations. Once you match with someone, start chatting to get to know them better. A simple "hi" could be the start of something amazing.`,
-    image: "chat-feature",
+    description:
+      "Match made? Conversation unlocked. Your chance to spark something real.",
     phoneContent: {
       title: "Messages",
       messageContent: [
         {
           name: "Hamza",
+          image: "/profile-1.png",
           time: "now",
           message: "Typing...",
           notification: 2,
         },
         {
           name: "Burhanuddin",
-          time: "23 minutes ago",
+          image: "/profile-2.png",
+          time: "23m ago",
           message: "Hey! How are you?",
         },
         {
           name: "Ammar",
-          time: "30 minutes ago",
+          image: "/profile-3.png",
+          time: "30m ago",
           message: "I'm in LA!",
         },
         {
           name: "Yusuf",
-          time: "1 hour ago",
+          image: "/profile-4.png",
+          time: "1h ago",
           message: "Image",
         },
       ],
@@ -55,24 +67,35 @@ const carouselItems = [
     id: 2,
     title: "See Who Likes You",
     description:
-      "Stay ahead in your journey — get notified instantly when someone likes your profile. It's a thoughtful way to know who's interested without any pressure.",
-    image: "likes-feature",
+      "Instant feedback. No guessing. Know who's into you right away.",
     phoneContent: {
       title: "Likes",
       content:
         "People think you're sweeter than mango barfi! Curious who they are?",
       profiles: [
-        { name: "Burhanuddin, 29", location: "Mumbai", time: "19 minutes ago" },
-        { name: "Zahra Bohra, 28", location: "Delhi", time: "2 minutes ago" },
         {
-          name: "Arwa Motiwala, 23",
+          name: "Hamza Bohra, 28",
+          location: "Delhi",
+          time: "2 minutes ago",
+          image: "/profile-1.png",
+        },
+        {
+          name: "Burhanuddin, 29",
+          location: "Mumbai",
+          time: "19 minutes ago",
+          image: "/profile-2.png",
+        },
+        {
+          name: "Raj Motiwala, 23",
           location: "Pune",
           time: "22 minutes ago",
+          image: "/profile-5.png",
         },
         {
           name: "Aziz Kapadia, 28",
           location: "Surat",
           time: "15 minutes ago",
+          image: "/profile-6.png",
         },
       ],
     },
@@ -81,18 +104,21 @@ const carouselItems = [
     id: 3,
     title: "Browse & Connect",
     description:
-      "Search through carefully reviewed profiles of Bohras who share your culture, values, and aspirations. Whether you're looking for a deep connection or just beginning your rishta journey, FindABohra helps you find real people with genuine intentions.",
-    image: "browse-feature",
+      "Swipe less, connect more. Explore profiles that actually fit your vibe and values.",
     phoneContent: {
       profiles: [
         {
           name: "Rukaiya Merchant, 27",
+          image: "/profile-girl-1.png",
+          bgImage: "/profile-girl-2.png",
           location: "Los Angeles, CA, USA",
           about:
             "Curious mind, chai lover, weekend explorer. Friends say I&apos;m thoughtful with a sarcastic sense of humor. I love deep talks, cozy cafés, and spontaneous hikes.",
         },
         {
           name: "Hatim Diwan, 21",
+          image: "/profile-5.png",
+          bgImage: "/profile-7.png",
           location: "Mumbai, Maharashtra, India",
           about:
             "Tech enthusiast with a passion for innovation and community building. Friends describe me as ambitious yet grounded, with a love for meaningful conversations and exploring new ideas. I enjoy coding, reading, and connecting with people who share similar values.",
@@ -104,12 +130,12 @@ const carouselItems = [
     id: 4,
     title: "Boost Your Profile",
     description:
-      "Let your profile shine! Boost it to appear more often in searches and suggestions. More visibility means more connections — all while staying true to your values and intentions.",
-    image: "boost-feature",
+      "Be seen first. A quick boost gets your profile in front of more Bohra singles, fast.",
     phoneContent: {
       profiles: [
         {
           name: "Yusuf Shakir, 29",
+          image: "/profile-3.png",
           location: "Indore, Madhya Pradesh, India",
           about:
             "Lawyer committed to upholding integrity and fairness. I value honesty, family, and meaningful connections.",
@@ -121,8 +147,7 @@ const carouselItems = [
     id: 5,
     title: "Message Priority",
     description:
-      "Want your message to be seen first? With message priority, your texts are placed at the top of their inbox — increasing visibility and response chances, especially in busy conversations.",
-    image: "message-priority-feature",
+      "Cut through the noise. Make sure your messages are always noticed.",
     phoneContent: {
       title: "Chat",
       subtitle: "Keep the Spark, Skip the Sharks!",
@@ -149,6 +174,54 @@ const carouselItems = [
           icon: "FaExclamationTriangle",
           title: "If Something's Off, Report It",
           description: "If you see something suspicious, let us know.",
+        },
+      ],
+    },
+  },
+  {
+    id: 6,
+    title: "Keep the Momentum",
+    description:
+      "Playful nudges remind you to stay active. Because matches don't wait.",
+    phoneContent: {
+      title: "Notifications",
+      notifications: [
+        {
+          id: 1,
+          message: "Sarah liked your profile! Tap to learn more.",
+          date: "09-22-2025",
+          type: "like" as const,
+        },
+        {
+          id: 2,
+          message: "Zainab liked your profile! Tap to learn more.",
+          date: "09-18-2025",
+          type: "like" as const,
+        },
+        {
+          id: 3,
+          message: "You have a new message from Sakina! Check it out!",
+          date: "09-05-2025",
+          type: "message" as const,
+        },
+        {
+          id: 4,
+          message: "Khadija liked your profile! Tap to learn more.",
+          date: "09-17-2025",
+          type: "like" as const,
+        },
+
+        {
+          id: 5,
+          message: "You have a new message from Zahra! Check it out!",
+          date: "09-05-2025",
+          type: "message" as const,
+        },
+        {
+          id: 6,
+          message: "You have a new message from Fatema! Check it out!",
+          date: "08-24-2025",
+          type: "message" as const,
         },
       ],
     },
@@ -201,6 +274,7 @@ export function FeaturesCarousel() {
 
         {/* Carousel Content */}
         <div className="grid lg:grid-cols-2 items-center">
+          {currentItem.id === 0 && <Slide0 />}
           {currentItem.id === 1 && <Slide1 currentItem={currentItem} />}
 
           {currentItem.id === 2 && <Slide2 currentItem={currentItem} />}
@@ -210,6 +284,8 @@ export function FeaturesCarousel() {
           {currentItem.id === 4 && <Slide4 currentItem={currentItem} />}
 
           {currentItem.id === 5 && <Slide5 currentItem={currentItem} />}
+
+          {currentItem.id === 6 && <Slide6 currentItem={currentItem} />}
 
           {/* Right - Feature Description */}
           <FeatureDescription currentItem={currentItem} />

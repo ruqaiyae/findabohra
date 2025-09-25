@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CarouselItem } from "./typeLib";
 import { PhoneMockup } from "../ui/PhoneMockup";
 import PhoneNavbar from "../ui/PhoneNavbar";
@@ -37,7 +38,9 @@ export default function Slide2({ currentItem }: Slide2Props) {
             {/* Call to Action */}
             <div className="text-center mb-2">
               <div className="flex items-center justify-center gap-2 mb-1">
-                <p className="text-[12px] font-semibold text-gray-700">Liked Me</p>
+                <p className="text-[12px] font-semibold text-gray-700">
+                  Liked Me
+                </p>
                 <div className="w-4 h-4 bg-[#67295F] rounded-full flex items-center justify-center">
                   <span className="text-white text-[10px] font-medium">6</span>
                 </div>
@@ -56,7 +59,13 @@ export default function Slide2({ currentItem }: Slide2Props) {
                 key={profile.name}
                 className="bg-white rounded-lg p-2 shadow-sm text-center"
               >
-                <div className="w-full h-15 bg-gray-300 rounded-lg mb-2"></div>
+                <Image
+                  src={profile.image || "/profile-circle.png"}
+                  alt={profile.name}
+                  width={50}
+                  height={50}
+                  className="w-full h-20 rounded-lg mb-2 object-cover"
+                />
                 <p className="text-[8px] font-semibold text-gray-800">
                   {profile.name}
                 </p>

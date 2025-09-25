@@ -94,13 +94,13 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#features"
                   className="text-white hover:text-gray-300 transition-colors"
                 >
-                  Careers
+                  Features
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#testimonials"
                   className="text-white hover:text-gray-300 transition-colors"
@@ -115,7 +115,7 @@ export function Footer() {
                 >
                   Blog
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -123,9 +123,7 @@ export function Footer() {
           <div className="w-45 space-y-6 text-white">
             <h3 className="text-sm font-semibold">Contact Details</h3>
             <ul className="space-y-2.5 text-xs">
-              <li>Email: contact@wpdating.com</li>
-              <li>Phone: +1789-825788529</li>
-              <li>Address: 2118 Thornridge Cir. Syracuse, Connecticut 35624</li>
+              <li>contact@findabohra.com</li>
             </ul>
           </div>
 
