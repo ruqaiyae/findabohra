@@ -43,7 +43,7 @@ export const carouselItems = [
     chatContent: {
       name: "Fatema",
       messages: [
-        "Hi, how are you? I saw on the app that we&apos;ve crossed paths several times this week ⬛",
+        "Hi, how are you? I saw on the app that we've crossed paths several times this week ⬛",
         "Haha truly! Nice to meet you Grace! What about a cup of coffee today evening? ⬛",
         "📷",
         "Great I will write later the exact time and place. See you soon!",
@@ -132,41 +132,6 @@ export const carouselItems = [
   },
   {
     id: 5,
-    title: "Message Priority",
-    description:
-      "Cut through the noise. Make sure your messages are always noticed.",
-    phoneContent: {
-      title: "Chat",
-      subtitle: "Keep the Spark, Skip the Sharks!",
-      description:
-        "Before diving in, here are some tips to keep your chats safe and enjoyable:",
-      tips: [
-        {
-          icon: "BiCool",
-          title: "Be Kind, Be Cool",
-          description:
-            "Treat others with respect, just like you'd like to be treated.",
-        },
-        {
-          icon: "FaUser",
-          title: "Keep It Real",
-          description: "Be yourself, and be honest.",
-        },
-        {
-          icon: "FaShieldAlt",
-          title: "Protect Your Privacy",
-          description: "Don't share personal information too soon.",
-        },
-        {
-          icon: "FaExclamationTriangle",
-          title: "If Something's Off, Report It",
-          description: "If you see something suspicious, let us know.",
-        },
-      ],
-    },
-  },
-  {
-    id: 6,
     title: "Keep the Momentum",
     description:
       "Playful nudges remind you to stay active. Because matches don't wait.",

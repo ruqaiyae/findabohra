@@ -24,9 +24,6 @@ const Slide4 = dynamic(() => import("./carouselContent/Slide4"), {
 const Slide5 = dynamic(() => import("./carouselContent/Slide5"), {
   ssr: false,
 });
-const Slide6 = dynamic(() => import("./carouselContent/Slide6"), {
-  ssr: false,
-});
 
 export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -67,9 +64,6 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
             break;
           case 5:
             await import("./carouselContent/Slide5");
-            break;
-          case 6:
-            await import("./carouselContent/Slide6");
             break;
         }
       } catch (error) {
@@ -120,8 +114,6 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
           {currentItem.id === 4 && <Slide4 currentItem={currentItem} />}
 
           {currentItem.id === 5 && <Slide5 currentItem={currentItem} />}
-
-          {currentItem.id === 6 && <Slide6 currentItem={currentItem} />}
 
           {/* Right - Feature Description */}
           <FeatureDescription currentItem={currentItem} />
