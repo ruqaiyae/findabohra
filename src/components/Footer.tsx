@@ -3,7 +3,7 @@ import { FaHeart } from "./icons";
 
 export function Footer() {
   return (
-    <footer id="footer" className="bg-gray-900 text-white pt-8 md:pt-16 pb-8">
+    <footer id="footer" className="bg-gray-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 mb-8 md:mb-12">
           {/* Column 1 - Logo and Description */}

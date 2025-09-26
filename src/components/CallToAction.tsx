@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function CallToAction() {
   return (
-    <section className="relative w-full pt-20 md:pb-20">
+    <section className="relative w-full md:pb-20">
       {/* Background Pattern */}
       <div className="hidden md:block absolute top-0 left-0 w-[80%] h-full rounded-tr-xl bg-gradient-to-br from-[#581C87] to-[#BE185D]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-0 relative z-10 grid lg:grid-cols-2 gap-10 md:gap-30 items-center bg-gradient-to-br from-[#581C87] to-[#BE185D] md:bg-none">
