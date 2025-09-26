@@ -43,7 +43,7 @@ export function HowItWorks() {
   ];
 
   return (
-    <section className="bg-white pt-25 pb-40 relative overflow-hidden">
+    <section className="bg-white pt-25 md:pb-40 relative overflow-hidden">
       {/* Decorative background hearts */}
       <div className="absolute top-30 left-40 -rotate-20">
         <Image
