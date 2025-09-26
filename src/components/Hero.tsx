@@ -2,41 +2,40 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    // <section id="home" className="bg-gradient-to-r from-pink-100 to-pink-100">
-    <section id="home" className="bg-[#FCECFC] ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center">
+    <section id="home" className="bg-[#FCECFC]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div className="flex flex-col md:flex-row items-center">
           {/* Left Content */}
-          <div className="w-[40%] space-y-8">
+          <div className="w-[90%] md:w-[40%] space-y-6 md:space-y-8 text-center md:text-left">
             <div>
-              <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
+              <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
                 Modern Matchmaking,
                 <br />
                 Rooted in Tradition
               </h1>
-              <p className="text-lg font-semibold mb-2 text-gray-600 leading-relaxed">
+              <p className="text-sm md:text-lg font-semibold mb-2 text-gray-600 leading-relaxed">
                 Your match, your way!
               </p>
-              <p className=" text-gray-600 leading-relaxed">
+              <p className="sm:w-[95%] md:w-full mx-auto text-xs md:text-base text-gray-600 leading-relaxed">
                 FindABohra brings the Dawoodi Bohra community together with
                 curated matches, complete privacy, and meaningful connections.
                 Modern, intentional, and true to you!
               </p>
-              <p className="text-lg font-semibold mt-2 text-gray-600 leading-relaxed">
+              <p className="text-xs md:text-lg font-semibold mt-2 text-gray-600 leading-relaxed">
                 Sign up today - your forever could start here. 💕
               </p>
             </div>
 
             {/* App Download Buttons */}
-            <div className="flex flex-col items-center sm:flex-row gap-4">
-              <div className="relative w-50 h-15">
+            <div className="flex gap-2 items-center justify-center md:justify-start">
+              <div className="relative w-40 h-12 sm:w-50 sm:h-15">
                 <Image
                   src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
                   alt="Download on the App Store"
                   fill
                 />
               </div>
-              <div className="relative w-50 h-22">
+              <div className="relative w-40 h-17 sm:w-50 sm:h-22">
                 <Image
                   src="/google-play-badge.png"
                   alt="Get it on Google Play"
@@ -63,14 +62,15 @@ export function Hero() {
           </div>
 
           {/* Right Image */}
-          <div className="hidden md:block lg:block w-[50%] relative">
-            <div className="relative z-10 w-180 h-152">
+          {/* w-full h-64 sm:h-80 md:h-96 lg:h-152 flex justify-center md:justify-end*/}
+          <div className="w-full md:w-[50%] relative mt-8 md:mt-0">
+            <div className="relative z-10">
               <Image
                 src="/hero-heart.png"
                 alt="hero-image"
                 width={900}
                 height={900}
-                className="absolute left-[40%] transform -translate-x-[40%] -translate-y-[30%]z-[-1]"
+                className="w-90 h-90 md:w-full md:h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:top-[30%] md:left-[45%] md:transform md:-translate-x-[40%] md:-translate-y-[30%] z-[-1]"
               />
 
               <Image
@@ -78,7 +78,7 @@ export function Hero() {
                 alt="hero-image"
                 width={620}
                 height={620}
-                className="pl-20 pt-20 relative z-50"
+                className="relative z-50 w-80 h-80 md:w-full md:h-full md:pl-20 md:pt-20"
               />
             </div>
           </div>

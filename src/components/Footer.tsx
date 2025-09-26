@@ -5,17 +5,17 @@ export function Footer() {
   return (
     <footer id="footer" className="bg-gray-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 mb-8 md:mb-12">
           {/* Column 1 - Logo and Description */}
-          <div className="w-65">
-            <a href="#home">
+          <div className="w-full md:w-65 text-center md:text-left">
+            <a href="#home" className="inline-block">
               <Image src="/logo-footer.png" alt="logo" width={80} height={80} />
             </a>
-            <p className="text-gray-300 leading-relaxed text-xs w-[90%] mt-3 mb-6">
+            <p className="text-gray-300 leading-relaxed text-xs md:text-xs w-full md:w-[90%] mt-3 mb-6 mx-auto md:mx-0">
               The trusted dating platform helping Bohras find meaningful
               connections worldwide.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-start">
               {/* Social Media Icons */}
               <a
                 href="https://www.facebook.com/findabohra"
@@ -81,7 +81,7 @@ export function Footer() {
           </div>
 
           {/* Column 2 - Quick Links */}
-          <div className="space-y-6 text-white">
+          <div className="space-y-4 md:space-y-6 text-white text-center md:text-left">
             <h3 className="text-sm font-semibold">Quick Links</h3>
             <ul className="space-y-2.5 text-xs">
               <li>
@@ -120,15 +120,15 @@ export function Footer() {
           </div>
 
           {/* Column 3 - Contact Details */}
-          <div className="w-45 space-y-6 text-white">
+          <div className="w-full md:w-45 space-y-4 md:space-y-6 text-white text-center md:text-left">
             <h3 className="text-sm font-semibold">Contact Details</h3>
             <ul className="space-y-2.5 text-xs">
-              <li>contact@findabohra.com</li>
+              <li>support@findabohra.com</li>
             </ul>
           </div>
 
           {/* Column 4 - Legal */}
-          <div className="space-y-6 text-white">
+          <div className="space-y-4 md:space-y-6 text-white text-center md:text-left">
             <h3 className="text-sm font-semibold">Legal</h3>
             <ul className="space-y-2.5 text-xs">
               <li>
@@ -160,11 +160,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 pt-8 w-[80%] mx-auto text-center">
-          <div className="flex justify-center items-center gap-1 text-white text-xs">
-            <span>© 2025 FindABohra. All rights reserved. Made with</span>
-            <FaHeart />
-            <span>for the Bohra community.</span>
+        <div className="border-t border-gray-700 pt-6 md:pt-8 w-full md:w-[80%] mx-auto text-center">
+          <div className="md:flex justify-center items-center gap-1 text-white text-xs">
+            <p>© 2025 FindABohra. All rights reserved. </p>
+            <div className="flex items-center justify-center gap-1">
+              <span>Made with</span>
+              <FaHeart />
+              <span>for the Bohra community.</span>
+            </div>
           </div>
         </div>
       </div>

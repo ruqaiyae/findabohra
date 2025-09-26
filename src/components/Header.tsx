@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { HiMiniXMark, RxHamburgerMenu } from "./icons";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,28 +65,11 @@ export function Header() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-[#4B5563] font-semibold hover:text-purple-600 focus:outline-none"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
+              {isMenuOpen ? (
+                <HiMiniXMark className="h-6 w-6" />
+              ) : (
+                <RxHamburgerMenu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -112,7 +96,7 @@ export function Header() {
               >
                 Features
               </a>
-              <a
+              {/* <a
                 href="#testimonials"
                 className="block px-3 py-2 text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
               >
@@ -123,7 +107,7 @@ export function Header() {
                 className="block px-3 py-2 text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
               >
                 Blog
-              </a>
+              </a> */}
               <a
                 href="#contact"
                 className="block px-3 py-2 text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"

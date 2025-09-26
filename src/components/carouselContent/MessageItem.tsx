@@ -24,11 +24,11 @@ export default function MessageItem({
           alt={name}
           width={20}
           height={20}
-          className="rounded-full"
+          className="w-4 h-4 md:w-7 md:h-7 rounded-full"
         />
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between">
-            <p className="text-[8px] sm:text-[9px] md:text-[10px] font-semibold text-gray-900 truncate">
+            <p className="text-[6px] sm:text-[9px] md:text-[10px] font-semibold text-gray-900 truncate">
               {name}
             </p>
             <p className="text-[4px] sm:text-[5px] md:text-[6px] text-gray-500 ml-2">
@@ -36,11 +36,11 @@ export default function MessageItem({
             </p>
           </div>
           <div className="flex items-center justify-between">
-            <p className="text-[7px] sm:text-[8px] md:text-[9px] text-gray-600 truncate">
+            <p className="text-[5px] sm:text-[8px] md:text-[9px] text-gray-600 truncate">
               {message}
             </p>
             {notification && notification > 0 && (
-              <div className="bg-red-500 text-white text-[4px] sm:text-[5px] md:text-[6px] rounded-full w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 flex items-center justify-center font-semibold">
+              <div className="bg-red-500 text-white text-[4px] sm:text-[5px] md:text-[6px] rounded-full w-2 h-2 md:w-3 md:h-3 flex items-center justify-center font-semibold">
                 {notification}
               </div>
             )}
