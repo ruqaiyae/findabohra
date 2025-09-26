@@ -26,7 +26,7 @@ const Slide5 = dynamic(() => import("./carouselContent/Slide5"), {
 });
 
 export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(3);
   const [isPaused, setIsPaused] = useState(true);
 
   useEffect(() => {

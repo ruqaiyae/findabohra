@@ -108,7 +108,7 @@ export const carouselItems = [
           bgImage: "/profile-7.png",
           location: "Mumbai, Maharashtra, India",
           about:
-            "Tech enthusiast with a passion for innovation and community building. Friends describe me as ambitious yet grounded, with a love for meaningful conversations and exploring new ideas. I enjoy coding, reading, and connecting with people who share similar values.",
+            "Tech enthusiast with a passion for innovation and community building. Friends describe me as ambitious yet grounded, with a love for meaningful conversations and exploring new ideas.",
         },
       ],
     },
