@@ -4,7 +4,7 @@ import { GrAttachment } from "react-icons/gr";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { LiaCheckDoubleSolid } from "react-icons/lia";
 import { PiPaperPlaneRightFill } from "react-icons/pi";
-import MessageItem from "../MessageItem";
+import MessageItem from "./MessageItem";
 import { PhoneMockup } from "../ui/PhoneMockup";
 import PhoneNavbar from "../ui/PhoneNavbar";
 import { CarouselItem, MessageItem as MessageItemType } from "./typeLib";
