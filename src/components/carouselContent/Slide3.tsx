@@ -88,7 +88,7 @@ export default function Slide3({ currentItem }: Slide3Props) {
         </div>
       </PhoneMockup>
 
-      <div className="absolute top-[33%] left-[25%] md:top-[30%] md:left-[25%]">
+      <div className="absolute top-[32%] left-[35%] md:top-[30%] md:left-[25%]">
         {/* Right - Phone Mockup */}
         <PhoneMockup
           marginLeft="ml-8 md:ml-10"

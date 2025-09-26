@@ -29,8 +29,8 @@ const Slide6 = dynamic(() => import("./carouselContent/Slide6"), {
 });
 
 export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [isPaused, setIsPaused] = useState(true);
 
   useEffect(() => {
     if (isPaused) return;
@@ -39,7 +39,7 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
       setCurrentIndex((prevIndex) =>
         prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change slide every 3 seconds
+    }, 5000); // Change slide every 3 seconds
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -99,17 +99,17 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
             Everything You Need to Find Your Perfect Match
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="w-[88%] md:w-full mx-auto text-sm md:text-xl text-gray-600 max-w-3xl">
             Thoughtfully designed features that respect our traditions while
             embracing modern convenience.
           </p>
         </div>
 
         {/* Carousel Content */}
-        <div className="grid lg:grid-cols-2 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           {currentItem.id === 0 && <Slide0 />}
           {currentItem.id === 1 && <Slide1 currentItem={currentItem} />}
 
