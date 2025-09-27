@@ -26,8 +26,8 @@ const Slide5 = dynamic(() => import("./carouselContent/Slide5"), {
 });
 
 export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(3);
-  const [isPaused, setIsPaused] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     if (isPaused) return;
@@ -36,7 +36,7 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
       setCurrentIndex((prevIndex) =>
         prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Change slide every 3 seconds
+    }, 3000); // Change slide every 3 seconds
 
     return () => clearInterval(interval);
   }, [isPaused]);
