@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaHeart } from "./icons";
 
 export function Footer() {
@@ -8,9 +9,9 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-0 mb-8 md:mb-12">
           {/* Column 1 - Logo and Description */}
           <div className="w-full md:w-65 text-center md:text-left">
-            <a href="#home" className="inline-block">
+            <Link href="/#home" className="inline-block">
               <Image src="/logo-footer.png" alt="logo" width={80} height={80} />
-            </a>
+            </Link>
             <p className="text-gray-300 leading-relaxed text-xs md:text-xs w-full md:w-[90%] mt-3 mb-6 mx-auto md:mx-0">
               The trusted dating platform helping Bohras find meaningful
               connections worldwide.
@@ -85,36 +86,36 @@ export function Footer() {
             <h3 className="text-sm font-semibold">Quick Links</h3>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <a
-                  href="#about"
+                <Link
+                  href="/#about"
                   className="text-white hover:text-gray-300 transition-colors"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#features"
+                <Link
+                  href="/#features"
                   className="text-white hover:text-gray-300 transition-colors"
                 >
                   Features
-                </a>
+                </Link>
               </li>
               {/* <li>
-                <a
-                  href="#testimonials"
+                <Link
+                  href="/#testimonials"
                   className="text-white hover:text-gray-300 transition-colors"
                 >
                   Testimonials
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#blog"
+                <Link
+                  href="/#blog"
                   className="text-white hover:text-gray-300 transition-colors"
                 >
                   Blog
-                </a>
+                </Link>
               </li> */}
             </ul>
           </div>
@@ -133,7 +134,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-xs">
               <li>
                 <a
-                  href="#privacy-policy"
+                  href="/privacy-policy"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Privacy Policy
@@ -141,18 +142,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#terms-and-conditions"
+                  href="/terms-and-conditions"
                   className="hover:text-gray-300 transition-colors"
                 >
                   Terms and Conditions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#community-guidelines"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Community Guidelines
                 </a>
               </li>
             </ul>

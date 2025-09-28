@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { HiMiniXMark, RxHamburgerMenu } from "./icons";
 
@@ -21,42 +22,42 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a
-              href="#home"
+            <Link
+              href="/#home"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
               Home
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              href="/#about"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
               About
-            </a>
-            <a
-              href="#features"
+            </Link>
+            <Link
+              href="/#features"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
               Features
-            </a>
-            {/* <a
-              href="#testimonials"
+            </Link>
+            {/* <Link
+              href="/#testimonials"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
               Testimonials
-            </a>
-            <a
-              href="#blog"
+            </Link>
+            <Link
+              href="/#blog"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
               Blog
-            </a> */}
-            <a
-              href="#footer"
+            </Link> */}
+            <Link
+              href="/#footer"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -78,42 +79,42 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <a
-                href="#home"
+              <Link
+                href="/#home"
                 className="block px-3 py-2 text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
               >
                 Home
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                href="/#about"
                 className="block px-3 py-2 text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
               >
                 About
-              </a>
-              <a
-                href="#features"
+              </Link>
+              <Link
+                href="/#features"
                 className="block px-3 py-2 text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
               >
                 Features
-              </a>
-              {/* <a
-                href="#testimonials"
+              </Link>
+              {/* <Link
+                href="/#testimonials"
                 className="block px-3 py-2 text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
               >
                 Testimonials
-              </a>
-              <a
-                href="#blog"
+              </Link>
+              <Link
+                href="/#blog"
                 className="block px-3 py-2 text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
               >
                 Blog
-              </a> */}
-              <a
-                href="#contact"
+              </Link> */}
+              <Link
+                href="/#footer"
                 className="block px-3 py-2 text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
         )}
