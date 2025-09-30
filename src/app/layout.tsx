@@ -23,6 +23,7 @@ const description =
   "Find your life partner in the Dawoodi Bohra community. Connect with like-minded individuals who share your values, traditions, and love for Kaari-chaaval. Safe, respectful, and culturally aligned dating experience.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://findabohra.com"),
   title: title,
   description: description,
   keywords:

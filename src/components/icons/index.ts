@@ -1,6 +1,6 @@
 // React Icons - Centralized exports
 // Import all icons from react-icons packages
-import { HiMagnifyingGlass } from "react-icons/hi2";
+import { HiMagnifyingGlass, HiChevronDown } from "react-icons/hi2";
 import { HiMiniXMark } from "react-icons/hi2";
 import { GoArrowLeft, GoHome } from "react-icons/go";
 import {
@@ -47,6 +47,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 // Export all icons
 export {
   HiMagnifyingGlass,
+  HiChevronDown,
   GoArrowLeft,
   GoHome,
   BsChatLeftText,

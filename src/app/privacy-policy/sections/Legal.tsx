@@ -4,7 +4,7 @@ export function Legal() {
       <h2 className="text-sm md:text-base font-semibold text-gray-900 mb-4">
         3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?
       </h2>
-      <p className="text-xs md:text-sm text-xs md:text-sm text-gray-700 leading-relaxed mb-4 italic">
+      <p className="text-xs md:text-sm text-gray-700 leading-relaxed mb-4 italic">
         <strong>In Short:</strong> We only process your personal information
         when we believe it is necessary and we have a valid legal reason (i.e.,
         legal basis) to do so under applicable law, like with your consent, to

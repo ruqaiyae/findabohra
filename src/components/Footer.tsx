@@ -10,7 +10,13 @@ export function Footer() {
           {/* Column 1 - Logo and Description */}
           <div className="w-full md:w-65 text-center md:text-left">
             <Link href="/#home" className="inline-block">
-              <Image src="/logo-footer.png" alt="logo" width={80} height={80} />
+              <Image
+                src="/logo-footer.png"
+                alt="logo"
+                width={80}
+                height={80}
+                className="w-auto h-auto"
+              />
             </Link>
             <p className="text-gray-300 leading-relaxed text-xs md:text-xs w-full md:w-[90%] mt-3 mb-6 mx-auto md:mx-0">
               The trusted dating platform helping Bohras find meaningful
@@ -30,7 +36,7 @@ export function Footer() {
                   alt="Facebook"
                   width={20}
                   height={20}
-                  className="brightness-0 invert"
+                  className="w-auto h-auto brightness-0 invert"
                 />
               </a>
               <a
@@ -45,7 +51,7 @@ export function Footer() {
                   alt="X (formerly Twitter)"
                   width={10}
                   height={10}
-                  className="brightness-0 invert"
+                  className="w-auto h-auto brightness-0 invert"
                 />
               </a>
               <a
@@ -60,7 +66,7 @@ export function Footer() {
                   alt="Instagram"
                   width={15}
                   height={15}
-                  className="brightness-0 invert"
+                  className="w-auto h-auto brightness-0 invert"
                 />
               </a>
               <a
@@ -70,13 +76,15 @@ export function Footer() {
                 className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors"
                 aria-label="Follow us on LinkedIn"
               >
-                <Image
-                  src="/linkedin-official.png"
-                  alt="LinkedIn"
-                  width={15}
-                  height={15}
-                  className="brightness-0 invert"
-                />
+                <div className="relative w-4 h-4">
+                  <Image
+                    src="/linkedin-official.png"
+                    alt="LinkedIn"
+                    fill
+                    sizes="32px"
+                    className="brightness-0 invert"
+                  />
+                </div>
               </a>
             </div>
           </div>

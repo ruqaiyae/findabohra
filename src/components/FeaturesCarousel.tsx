@@ -41,11 +41,15 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
     return () => clearInterval(interval);
   }, [isPaused]);
 
+  // Preload next slide for smoother transitions
+  // Dynamically imports the next slide component to reduce loading time
   useEffect(() => {
     const nextSlide = (currentIndex + 1) % carouselItems.length;
 
     async function preloadNext() {
       try {
+        // Dynamically import the next slide component
+        // This ensures the component is loaded before it's needed
         switch (nextSlide) {
           case 0:
             await import("./carouselContent/Slide0");
@@ -76,6 +80,13 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+    setIsPaused(true); // Pause when user manually selects a slide
+
+    // Resume auto-play after 5 seconds to give user time to read
+    // This prevents the carousel from immediately moving after user interaction
+    setTimeout(() => {
+      setIsPaused(false);
+    }, 5000);
   };
 
   const currentItem = carouselItems[currentIndex];
@@ -86,7 +97,7 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
       className="bg-gradient-to-br from-purple-50 to-pink-50 py-20 relative"
     >
       {/* Decorative hearts */}
-      <div className="absolute bottom-5 left-0">
+      <div className="absolute bottom-5 left-0 z-0">
         <Hearts scale="scale-x-[-1]" />
       </div>
 
@@ -120,19 +131,20 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
         </div>
 
         {/* Carousel Indicators */}
-        <div className="flex justify-center mt-12 space-x-3">
+        <div className="flex justify-center mt-12 space-x-3 relative z-10">
           {carouselItems.map((_, index) => (
             <button
               key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ease-in-out ${
+              id={`slide-indicator-${index}`}
+              onClick={() => {
+                goToSlide(index);
+              }}
+              className={`min-w-3 min-h-3 w-3 h-3 rounded-full transition-all duration-300 ease-in-out touch-manipulation ${
                 index === currentIndex
                   ? "bg-[#67295F] scale-110"
                   : "bg-gray-300 hover:bg-gray-400"
               }`}
               aria-label={`Go to slide ${index + 1}`}
-              onMouseEnter={() => index === currentIndex && setIsPaused(true)}
-              onMouseLeave={() => index === currentIndex && setIsPaused(false)}
             />
           ))}
         </div>

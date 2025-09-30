@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
           alt="Decorative heart"
           width={200}
           height={200}
-          className="object-contain"
+          className="object-contain w-auto h-auto"
         />
       </div>
       <div className="hidden md:block fixed top-40 right-10 opacity-15 z-0">
@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
           alt="Decorative hearts"
           width={150}
           height={150}
-          className="object-contain"
+          className="object-contain w-auto h-auto"
         />
       </div>
       <div className="hidden md:block fixed bottom-20 left-20 opacity-10 z-0">

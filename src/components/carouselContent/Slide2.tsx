@@ -42,7 +42,9 @@ export default function Slide2({ currentItem }: Slide2Props) {
                   Liked Me
                 </p>
                 <div className="w-3 h-3 md:w-4 md:h-4 bg-[#67295F] rounded-full flex items-center justify-center">
-                  <span className="text-white text-[7px] md:text-[10px] font-medium">6</span>
+                  <span className="text-white text-[7px] md:text-[10px] font-medium">
+                    6
+                  </span>
                 </div>
               </div>
               <p className="text-[6px] md:text-[10px] text-gray-600">
@@ -59,18 +61,24 @@ export default function Slide2({ currentItem }: Slide2Props) {
                 key={profile.name}
                 className="bg-white rounded-lg p-1 md:p-2 shadow-sm text-center"
               >
-                <Image
-                  src={profile.image || "/profile-circle.png"}
-                  alt={profile.name}
-                  width={50}
-                  height={50}
-                  className="w-full h-10 md:h-20 rounded-lg mb-2 object-cover"
-                />
+                <div className="relative w-full h-10 md:h-20 rounded-lg mb-2 overflow-hidden">
+                  <Image
+                    src={profile.image || "/profile-circle.png"}
+                    alt={profile.name}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
                 <p className="text-[6px] md:text-[8px] font-semibold text-gray-800">
                   {profile.name}
                 </p>
-                <p className="text-[5px] md:text-[7px] text-gray-600">{profile.location}</p>
-                <p className="text-[5px] md:text-[7px] text-[#67295F]">{profile.time}</p>
+                <p className="text-[5px] md:text-[7px] text-gray-600">
+                  {profile.location}
+                </p>
+                <p className="text-[5px] md:text-[7px] text-[#67295F]">
+                  {profile.time}
+                </p>
               </div>
             ))}
           </div>
