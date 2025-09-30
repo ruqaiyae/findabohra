@@ -22,8 +22,8 @@ export function Subscriptions() {
       </h3>
       <p className="text-xs md:text-sm text-gray-700 leading-relaxed mb-4">
         We offer a 2-day free trial to new users who register with the Services.
-        The account will be charged according to the user's chosen subscription
-        at the end of the free trial.
+        The account will be charged according to the user&apos;s chosen
+        subscription at the end of the free trial.
       </p>
 
       <h3 className="text-sm md:text-base font-semibold text-gray-800 mb-3">
