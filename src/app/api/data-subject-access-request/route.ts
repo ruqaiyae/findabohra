@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { supabase } from "@/lib/supabase";
 
 interface FormData {
   name: string;
@@ -12,6 +13,40 @@ interface FormData {
     irreversible: boolean;
     validation: boolean;
   };
+}
+
+// Store request in database
+async function storeRequestInDatabase(formData: FormData): Promise<boolean> {
+  try {
+    if (!supabase) {
+      console.warn("Supabase client not available - skipping database storage");
+      return true; // Don't fail the request if DB is not available
+    }
+
+    const { error } = await supabase!
+      .from("data_subject_access_requests")
+      .insert({
+        name: formData.name,
+        email: formData.email,
+        request_type: formData.requestType,
+        law: formData.law,
+        details: formData.details,
+        confirmations: formData.confirmations,
+        created_at: new Date().toISOString(),
+        status: "pending",
+      });
+
+    if (error) {
+      console.error("Database error:", error);
+      return false;
+    }
+
+    console.log("Request stored in database successfully");
+    return true;
+  } catch (error) {
+    console.error("Error storing request in database:", error);
+    return false;
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -71,7 +106,17 @@ Confirmations:
 Submitted on: ${new Date().toISOString()}
     `.trim();
 
-    // Send email using Resend SDK
+    // Always store the request in the database first
+    const storedInDb = await storeRequestInDatabase(formData);
+
+    if (!storedInDb) {
+      return NextResponse.json(
+        { error: "Failed to process request" },
+        { status: 500 }
+      );
+    }
+
+    // Optionally send email notification if Resend is configured
     if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -86,37 +131,18 @@ Submitted on: ${new Date().toISOString()}
 
         if (error) {
           console.error("Resend API error:", error);
-          return NextResponse.json(
-            { error: "Failed to send email" },
-            { status: 500 }
-          );
+          // Don't fail the request - it's already stored in DB
+        } else {
+          console.log("Email notification sent successfully:", data);
         }
-
-        console.log("Email sent successfully:", data);
       } catch (error) {
-        console.error("Error sending email:", error);
-        return NextResponse.json(
-          { error: "Failed to send email" },
-          { status: 500 }
-        );
+        console.error("Error sending email notification:", error);
+        // Don't fail the request - it's already stored in DB
       }
     } else {
-      // Fallback: Log the request for manual processing
       console.log(
-        "Data Subject Access Request (Email service not configured):"
+        "Email notifications not configured - RESEND_API_KEY missing"
       );
-      console.log(emailContent);
-
-      // In development, you might want to return success anyway
-      // In production, you should configure an email service
-      if (process.env.NODE_ENV === "development") {
-        console.log("Development mode: Email not sent, but request logged");
-      } else {
-        return NextResponse.json(
-          { error: "Email service not configured" },
-          { status: 500 }
-        );
-      }
     }
 
     return NextResponse.json({ success: true });

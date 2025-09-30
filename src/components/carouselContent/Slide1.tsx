@@ -36,7 +36,7 @@ export default function Slide1({ currentItem }: Slide1Props) {
 
         {/* Messages */}
         <div className="mx-2 sm:mx-3 md:mx-4 my-1 sm:my-2">
-          <p className="text-[7px] md:text-[10px] sm:text-[11px] md:text-[12px] font-semibold">
+          <p className="text-[7px] sm:text-[11px] md:text-[12px] font-semibold">
             {currentItem.phoneContent?.title}
           </p>
 

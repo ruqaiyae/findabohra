@@ -1,12 +1,13 @@
 import Image from "next/image";
+import { InviteForm } from "./InviteForm";
 
 export function Hero() {
   return (
     <section id="home" className="bg-[#FCECFC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <div className="flex flex-col md:flex-row items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-15 pb-20 md:py-0 h-full md:h-screen ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
           {/* Left Content */}
-          <div className="w-[90%] md:w-[40%] space-y-6 md:space-y-8 text-center md:text-left">
+          <div className="space-y-6 text-center lg:text-left">
             <div>
               <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
                 Modern Matchmaking,
@@ -16,30 +17,32 @@ export function Hero() {
               <p className="text-sm md:text-lg font-semibold mb-2 text-gray-600 leading-relaxed">
                 Your match, your way!
               </p>
-              <p className="sm:w-[95%] md:w-full mx-auto text-xs md:text-base text-gray-600 leading-relaxed">
+              <p className="text-xs md:text-base p-6 md:px-0 text-gray-600 leading-relaxed">
                 FindABohra brings the Dawoodi Bohra community together with
                 curated matches, complete privacy, and meaningful connections.
                 Modern, intentional, and true to you!
               </p>
               <p className="text-xs md:text-lg font-semibold mt-2 text-gray-600 leading-relaxed">
-                Sign up today - your forever could start here. 💕
+                Request early access - your forever could start here. 💕
               </p>
             </div>
 
-            {/* App Download Buttons */}
-            <div className="flex gap-2 items-center justify-center md:justify-start">
-              <div className="relative w-40 h-12 sm:w-50 sm:h-15">
+            {/* App Download Buttons - Disabled */}
+            <div className="flex gap-2 items-center justify-center lg:justify-start">
+              <div className="relative w-40 h-12 sm:w-50 sm:h-15 opacity-50 cursor-not-allowed">
                 <Image
                   src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                  alt="Download on the App Store"
+                  alt="Download on the App Store - Coming Soon"
                   fill
+                  sizes="(max-width: 640px) 160px, 200px"
                 />
               </div>
-              <div className="relative w-40 h-17 sm:w-50 sm:h-22">
+              <div className="relative w-40 h-17 sm:w-50 sm:h-22 opacity-50 cursor-not-allowed">
                 <Image
                   src="/google-play-badge.png"
-                  alt="Get it on Google Play"
+                  alt="Get it on Google Play - Coming Soon"
                   fill
+                  sizes="(max-width: 640px) 160px, 200px"
                 />
               </div>
             </div>
@@ -62,8 +65,8 @@ export function Hero() {
           </div>
 
           {/* Right Image */}
-          {/* w-full h-64 sm:h-80 md:h-96 lg:h-152 flex justify-center md:justify-end*/}
-          <div className="w-full md:w-[50%] relative mt-8 md:mt-0">
+
+          {/* <div className="w-full md:w-[50%] relative mt-8 md:mt-0">
             <div className="relative z-10">
               <Image
                 src="/hero-heart.png"
@@ -79,7 +82,11 @@ export function Hero() {
                 width={620}
                 height={620}
                 className="relative z-50 w-80 h-80 md:w-full md:h-full md:pl-20 md:pt-20"
-              />
+              /> */}
+          {/* Right Content - Form */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="w-full max-w-md">
+              <InviteForm />
             </div>
           </div>
         </div>

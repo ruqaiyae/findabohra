@@ -43,7 +43,10 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="bg-white pt-25 pb-15 md:pb-40 relative overflow-hidden">
+    <section
+      id="how-it-works"
+      className="bg-white pt-25 pb-15 md:pb-40 relative overflow-hidden"
+    >
       {/* Decorative background hearts */}
       <div className="absolute top-10 md:top-30 left-40 -rotate-20">
         <Image
@@ -51,7 +54,7 @@ export function HowItWorks() {
           alt="Decorative heart"
           width={346}
           height={346}
-          className="object-contain"
+          className="object-contain w-auto h-auto"
         />
       </div>
       <div className="absolute bottom-10 md:-bottom-22.5 left-0 md:left-auto md:right-80 w-25 h-25 md:w-64 md:h-64 opacity-70">
@@ -60,7 +63,7 @@ export function HowItWorks() {
           alt="Decorative hearts"
           width={180}
           height={180}
-          className="object-contain scale-x-[-1]"
+          className="object-contain scale-x-[-1] w-auto h-auto"
         />
       </div>
 
@@ -130,7 +133,7 @@ function DottedLine({ position }: DottedLineProps) {
       alt="Dotted line"
       width={180}
       height={100}
-      className={`hidden lg:block absolute top-45 ${position}`}
+      className={`hidden lg:block absolute top-45 w-auto h-auto ${position}`}
     />
   );
 }

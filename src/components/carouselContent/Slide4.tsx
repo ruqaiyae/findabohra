@@ -51,8 +51,12 @@ export default function Slide4({ currentItem }: Slide4Props) {
 
           {/* About Section */}
           <div className="mb-1 md:mb-2.5">
-            <h2 className="text-[8px] md:text-[11px] font-bold text-gray-800">About</h2>
-            <p className="text-[7px] md:text-[9px] text-gray-600 leading-relaxed">{about}</p>
+            <h2 className="text-[8px] md:text-[11px] font-bold text-gray-800">
+              About
+            </h2>
+            <p className="text-[7px] md:text-[9px] text-gray-600 leading-relaxed">
+              {about}
+            </p>
           </div>
 
           {/* Detailed Attributes */}
@@ -68,7 +72,9 @@ export default function Slide4({ currentItem }: Slide4Props) {
 
               <div className="flex items-center gap-1 md:gap-2">
                 <LuGraduationCap className="text-[8px] md:text-xs font-extrabold text-[#67295F]" />
-                <span className="text-[6px] md:text-[9px] text-gray-700">High school</span>
+                <span className="text-[6px] md:text-[9px] text-gray-700">
+                  High school
+                </span>
               </div>
 
               <div className="flex items-center gap-1 md:gap-2">
@@ -83,22 +89,30 @@ export default function Slide4({ currentItem }: Slide4Props) {
             <div className="space-y-2">
               <div className="flex items-center gap-1 md:gap-2">
                 <MdOutlineWork className="text-[8px] md:text-xs font-extrabold text-[#67295F]" />
-                <span className="text-[6px] md:text-[9px] text-gray-700">Lawyer</span>
+                <span className="text-[6px] md:text-[9px] text-gray-700">
+                  Lawyer
+                </span>
               </div>
 
               <div className="flex items-center gap-1 md:gap-2">
                 <GiBigDiamondRing className="text-[8px] md:text-xs font-extrabold text-[#67295F]" />
-                <span className="text-[6px] md:text-[9px] text-gray-700">Never Married</span>
+                <span className="text-[6px] md:text-[9px] text-gray-700">
+                  Never Married
+                </span>
               </div>
 
               <div className="flex items-center gap-1 md:gap-2">
                 <FaRegClock className="text-[8px] md:text-xs font-extrabold text-[#67295F]" />
-                <span className="text-[6px] md:text-[9px] text-gray-700">2-4 years</span>
+                <span className="text-[6px] md:text-[9px] text-gray-700">
+                  2-4 years
+                </span>
               </div>
             </div>
           </div>
 
-          <h2 className="text-[8px] md:text-[11px] font-bold text-gray-800">Interests</h2>
+          <h2 className="text-[8px] md:text-[11px] font-bold text-gray-800">
+            Interests
+          </h2>
           <ul className="flex gap-2 text-[7px] md:text-[9px] text-gray-600">
             <li>Traveling,</li>
             <li>Cooking,</li>
