@@ -18,7 +18,12 @@ interface FormData {
 // Store request in database
 async function storeRequestInDatabase(formData: FormData): Promise<boolean> {
   try {
-    const { error } = await supabase
+    if (!supabase) {
+      console.warn("Supabase client not available - skipping database storage");
+      return true; // Don't fail the request if DB is not available
+    }
+
+    const { error } = await supabase!
       .from("data_subject_access_requests")
       .insert({
         name: formData.name,
