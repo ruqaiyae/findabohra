@@ -33,6 +33,8 @@ export function isValidPhone(phone: string, countryCode: string): boolean {
     if (phoneNumber && phoneNumber.isValid()) {
       return true;
     }
+
+    return false; // Phone number exists but is not valid
   } catch {
     // If parsing fails (invalid format), the number is invalid
     return false;
