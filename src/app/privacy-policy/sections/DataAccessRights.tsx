@@ -12,12 +12,12 @@ export function DataAccessRights() {
         have the right to withdraw your consent to our processing of your
         personal information. These rights may be limited in some circumstances
         by applicable law. To request to review, update, or delete your personal
-        information, please fill out and submit a{" "}
+        information, please email us at{" "}
         <a
-          href="/privacy-policy/data-subject-access-request"
+          href="mailto:support@findabohra.com"
           className="text-blue-600 hover:underline"
         >
-          data subject access request
+          support@findabohra.com
         </a>
         .
       </p>

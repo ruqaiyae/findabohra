@@ -18,7 +18,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const title = "Find a Bohra - Dating App for Dawoodi Bohra Community";
+const title =
+  "Find a Bohra - Matrimonial and Dating App for Dawoodi Bohra Community";
 const description =
   "Find your life partner in the Dawoodi Bohra community. Connect with like-minded individuals who share your values, traditions, and love for Kaari-chaaval. Safe, respectful, and culturally aligned dating experience.";
 
