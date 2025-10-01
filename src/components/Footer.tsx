@@ -25,7 +25,7 @@ export function Footer() {
             <div className="flex space-x-4 justify-center md:justify-start">
               {/* Social Media Icons */}
               <a
-                href="https://www.facebook.com/FindABohra"
+                href="https://www.facebook.com/groups/1886194045520077"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors"
