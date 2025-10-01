@@ -25,7 +25,7 @@ export function Footer() {
             <div className="flex space-x-4 justify-center md:justify-start">
               {/* Social Media Icons */}
               <a
-                href="https://www.facebook.com/findabohra"
+                href="https://www.facebook.com/groups/1886194045520077"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors"
@@ -49,8 +49,8 @@ export function Footer() {
                 <Image
                   src="/twitter-x-official.png"
                   alt="X (formerly Twitter)"
-                  width={10}
-                  height={10}
+                  width={5}
+                  height={5}
                   className="w-auto h-auto brightness-0 invert"
                 />
               </a>
@@ -70,21 +70,34 @@ export function Footer() {
                 />
               </a>
               <a
-                href="https://www.linkedin.com/company/findabohra"
+                href="https://www.threads.net/@findabohra"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors"
-                aria-label="Follow us on LinkedIn"
+                aria-label="Follow us on Threads"
               >
-                <div className="relative w-4 h-4">
-                  <Image
-                    src="/linkedin-official.png"
-                    alt="LinkedIn"
-                    fill
-                    sizes="32px"
-                    className="brightness-0 invert"
-                  />
-                </div>
+                <Image
+                  src="/threads-official.png"
+                  alt="Threads"
+                  width={20}
+                  height={20}
+                  className="w-auto h-auto brightness-0 invert"
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/@findabohra"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors"
+                aria-label="Follow us on YouTube"
+              >
+                <Image
+                  src="/youtube-official.png"
+                  alt="YouTube"
+                  width={20}
+                  height={20}
+                  className="w-auto h-auto brightness-0 invert"
+                />
               </a>
             </div>
           </div>
