@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { validateFormData } from "@/utils/validation";
+import { submitInviteToSheets } from "@/lib/googleSheets";
 
 interface InviteFormData {
   name: string;
@@ -47,53 +48,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const googleFormUrl = process.env.GOOGLE_FORM_URL;
-    const nameEntryId = process.env.GOOGLE_FORM_NAME_ENTRY_ID;
-    const emailEntryId = process.env.GOOGLE_FORM_EMAIL_ENTRY_ID;
-    const phoneEntryId = process.env.GOOGLE_FORM_PHONE_ENTRY_ID;
-    const countryEntryId = process.env.GOOGLE_FORM_COUNTRY_ENTRY_ID;
+    // Submit to Google Sheets using official API
+    try {
+      const success = await submitInviteToSheets(sanitizedData);
 
-    if (
-      googleFormUrl &&
-      nameEntryId &&
-      emailEntryId &&
-      phoneEntryId &&
-      countryEntryId
-    ) {
-      try {
-        const formData = new URLSearchParams();
-        formData.append(nameEntryId, sanitizedData.name);
-        formData.append(emailEntryId, sanitizedData.email);
-        formData.append(phoneEntryId, sanitizedData.phone || "");
-        formData.append(countryEntryId, sanitizedData.countryCode);
-        formData.append(countryEntryId, sanitizedData.dialCode);
-
-        const response = await fetch(googleFormUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: formData,
-        });
-
-        if (!response.ok) {
-          console.error(
-            "Google Form submission failed:",
-            response.status,
-            response.statusText
-          );
-          return NextResponse.json(
-            { error: "Failed to submit request. Please try again." },
-            { status: 500 }
-          );
-        }
-      } catch (error) {
-        console.error("Error submitting to Google Sheets:", error);
-        return NextResponse.json(
-          { error: "Failed to submit request. Please try again." },
-          { status: 500 }
-        );
+      if (!success) {
+        console.error("Google Sheets submission failed");
+        // Don't fail the request - this is optional integration
+      } else {
+        console.log("Successfully submitted to Google Sheets");
       }
+    } catch (error) {
+      console.error("Error submitting to Google Sheets:", error);
+      // Don't fail the request - this is optional integration
     }
 
     return NextResponse.json({

@@ -33,9 +33,6 @@ export function InviteForm() {
   >("idle");
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
-  const [focusedField, setFocusedField] = useState<string | undefined>(
-    undefined
-  );
 
   // Handle input changes with automatic sanitization and touch tracking
   const handleInputChange = (field: keyof InviteFormData, value: string) => {
@@ -84,7 +81,7 @@ export function InviteForm() {
 
   // Helper function to check if error should be displayed for a field
   const shouldShowError = (fieldName: string) => {
-    return focusedField === fieldName && errors[fieldName as keyof FormErrors];
+    return touched[fieldName] && errors[fieldName as keyof FormErrors];
   };
 
   const isFormValid =
@@ -209,8 +206,6 @@ export function InviteForm() {
             id="name"
             value={formData.name}
             onChange={(e) => handleInputChange("name", e.target.value)}
-            onFocus={() => setFocusedField("name")}
-            onBlur={() => setFocusedField(undefined)}
             required
             aria-describedby={
               shouldShowError("name") ? "name-error" : undefined
@@ -237,8 +232,6 @@ export function InviteForm() {
             id="email"
             value={formData.email}
             onChange={(e) => handleInputChange("email", e.target.value)}
-            onFocus={() => setFocusedField("email")}
-            onBlur={() => setFocusedField(undefined)}
             required
             aria-describedby={
               shouldShowError("email") ? "email-error" : undefined
@@ -275,8 +268,6 @@ export function InviteForm() {
               id="phone"
               value={formData.phone}
               onChange={(e) => handlePhoneChange(e.target.value)}
-              onFocus={() => setFocusedField("phone")}
-              onBlur={() => setFocusedField(undefined)}
               maxLength={15}
               aria-describedby={
                 shouldShowError("phone") ? "phone-error" : undefined
