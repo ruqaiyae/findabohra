@@ -142,15 +142,15 @@ export function Summary() {
             How do you exercise your rights?
           </h3>
           <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
-            The easiest way to exercise your rights is by submitting a{" "}
+            The easiest way to exercise your rights is by emailing us at{" "}
             <a
-              href="/privacy-policy/#how-can-you-review-update-or-delete-the-data-we-collect-from-you"
+              href="mailto:support@findabohra.com"
               className="text-blue-600 hover:underline font-semibold"
             >
-              data subject access request
+              support@findabohra.com
             </a>
-            , or by contacting us. We will consider and act upon any request in
-            accordance with applicable data protection laws.
+            . We will consider and act upon any request in accordance with
+            applicable data protection laws.
           </p>
         </div>
       </div>

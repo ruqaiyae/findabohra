@@ -18,4 +18,3 @@ export { OtherRegionsRights } from "./OtherRegionsRights";
 export { PolicyUpdates } from "./PolicyUpdates";
 export { ContactInformation } from "./ContactInformation";
 export { DataAccessRights } from "./DataAccessRights";
-export { DataSubjectAccessRequestForm } from "./DataSubjectAccessRequestForm";
