@@ -11,20 +11,8 @@ export function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14">
-          <div className="flex items-center">
-            <div className=" flex items-center text-2xl font-bold">
-              <Image
-                src="/logo.png"
-                alt="logo"
-                height={50}
-                width={50}
-                className="w-auto h-auto"
-              />
-              <span className="text-[#7C2D92] ml-2">FindABohra</span>
-            </div>
-          </div>
-
+        <div className="flex justify-between items-center h-12 md:h-14">
+          {/* Left navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link
               href="/#home"
@@ -38,24 +26,31 @@ export function Header() {
             >
               About
             </Link>
+          </nav>
+
+          {/* Center logo */}
+          <div className="flex items-center justify-center flex-1">
+            <div className="flex items-center text-xl md:text-2xl font-bold">
+              <Image
+                src="/logo.png"
+                alt="logo"
+                height={50}
+                width={50}
+                className="w-10 md:w-14 h-auto"
+                priority
+              />
+              <span className="text-[#7C2D92] ml-2">FindABohra</span>
+            </div>
+          </div>
+
+          {/* Right navigation */}
+          <nav className="hidden md:flex space-x-8">
             <Link
               href="/#features"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
             >
               Features
             </Link>
-            {/* <Link
-              href="/#testimonials"
-              className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
-            >
-              Testimonials
-            </Link>
-            <Link
-              href="/#blog"
-              className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
-            >
-              Blog
-            </Link> */}
             <Link
               href="/#footer"
               className="text-[#4B5563] font-semibold hover:text-purple-600 transition-colors"
@@ -64,6 +59,7 @@ export function Header() {
             </Link>
           </nav>
 
+          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
