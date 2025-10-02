@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "googleapis": "^161.0.0",
+    "gsap": "^3.13.0",
     "libphonenumber-js": "^1.12.23",
     "next": "^15.5.4",
     "react": "19.1.0",
