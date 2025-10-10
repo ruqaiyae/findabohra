@@ -167,12 +167,13 @@ export function InviteForm() {
 
   return (
     <div className="bg-white/90 backdrop-blur-sm border border-purple-200 rounded-2xl p-4 md:p-6 shadow-lg">
-      <h2 className="text-base md:text-lg font-bold text-gray-900 mb-2 text-center">
-        Request Early Access
+      <h2 className="text-base md:text-xl text-gray-900 mb-2 text-center">
+        ✨ Request Early Access ✨
       </h2>
 
-      <p className="text-xs md:text-sm text-gray-600 mb-4 md:mb-6 text-center">
-        Join our exclusive early access program!
+      <p className="text-xs md:text-sm text-gray-600 mb-4 md:mb-6 text-center px-4">
+        Be among our early users! You will receive a special access code to join
+        when the app launches
       </p>
 
       {submitStatus === "success" && (
@@ -213,7 +214,7 @@ export function InviteForm() {
             className={`w-full px-3 md:px-4 py-2 md:py-3 border rounded-md md:rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white/80 backdrop-blur-sm text-xs md:text-base ${
               shouldShowError("name") ? "border-red-300" : "border-purple-200"
             }`}
-            placeholder="Your full name"
+            placeholder="Your name"
           />
           {shouldShowError("name") && (
             <p id="name-error" className="mt-1 text-xs text-red-600">
@@ -299,7 +300,7 @@ export function InviteForm() {
                 : "bg-gray-300 text-gray-500 cursor-not-allowed"
             }`}
           >
-            {isSubmitting ? "SUBMITTING..." : "REQUEST EARLY ACCESS"}
+            {isSubmitting ? "SUBMITTING..." : "Sign me up!"}
           </button>
           <div id="submit-status" className="sr-only" aria-live="polite">
             {isSubmitting
@@ -309,6 +310,54 @@ export function InviteForm() {
                 : submitStatus === "error"
                   ? "Error submitting request"
                   : ""}
+          </div>
+        </div>
+
+        {/* Why Sign Up Tooltip */}
+        <div className="relative inline-block w-full">
+          <div className="group text-center">
+            <span className="text-xs text-purple-600 hover:text-purple-800 cursor-pointer font-medium decoration-solid underline decoration-purple-400 hover:decoration-purple-600 underline-offset-2 transition-all duration-200 inline-block">
+              Why sign up?
+            </span>
+
+            {/* Tooltip Content */}
+            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-80 bg-white border-2 border-purple-300 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 p-4">
+              <div className="text-xs text-gray-900 space-y-3 text-left">
+                <div className="font-bold text-gray-900 mb-4 text-center text-sm border-b-2 border-purple-200 pb-3">
+                  Exclusive Benefits
+                </div>
+                <div className="space-y-3">
+                  <div>
+                    <span className="font-bold text-purple-800">
+                      Exclusive Access:
+                    </span>{" "}
+                    Be part of the private beta before the full launch.
+                  </div>
+                  <div>
+                    <span className="font-bold text-purple-800">
+                      Shape the Experience:
+                    </span>{" "}
+                    Your feedback will directly influence the future of FAB.
+                  </div>
+                  <div>
+                    <span className="font-bold text-purple-800">
+                      Better Matches:
+                    </span>{" "}
+                    Early users get the first look at a carefully curated pool
+                    of Bohra profiles.
+                  </div>
+                  <div className="font-bold text-purple-700 text-xs pt-3 border-t-2 border-purple-200 text-center bg-purple-50 -mx-2 px-3 py-2 rounded-lg">
+                    100% Private, 100% for Bohras, 100% Free
+                  </div>
+                </div>
+              </div>
+
+              {/* Tooltip Arrow */}
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2">
+                <div className="w-0 h-0 border-l-[9px] border-r-[9px] border-t-[9px] border-l-transparent border-r-transparent border-t-purple-200"></div>
+                <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-white absolute -top-[8px] left-1/2 transform -translate-x-1/2"></div>
+              </div>
+            </div>
           </div>
         </div>
       </form>

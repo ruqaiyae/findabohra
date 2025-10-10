@@ -39,7 +39,12 @@ export function Header() {
                 className="w-10 md:w-14 h-auto"
                 priority
               />
-              <span className="text-[#7C2D92] ml-2">FindABohra</span>
+              <span
+                className="text-[#7C2D92] ml-2"
+                style={{ fontFamily: "var(--font-squada-one)" }}
+              >
+                FindABohra
+              </span>
             </div>
           </div>
 

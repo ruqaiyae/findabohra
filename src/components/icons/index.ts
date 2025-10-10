@@ -1,89 +1,33 @@
 // React Icons - Centralized exports
-// Import all icons from react-icons packages
-import { HiMagnifyingGlass, HiChevronDown } from "react-icons/hi2";
-import { HiMiniXMark } from "react-icons/hi2";
-import { GoArrowLeft, GoHome } from "react-icons/go";
-import {
-  BsChatLeftText,
-  BsThreeDotsVertical,
-  BsEnvelope,
-} from "react-icons/bs";
-import {
-  MdOutlineUpgrade,
-  MdOutlineWork,
-  MdChatBubbleOutline,
-} from "react-icons/md";
-import { LiaCheckDoubleSolid } from "react-icons/lia";
-import { GrAttachment } from "react-icons/gr";
-import { PiPaperPlaneRightFill } from "react-icons/pi";
-import { CiLineHeight, CiGlobe } from "react-icons/ci";
-import { LuGraduationCap } from "react-icons/lu";
-import { IoIosPhonePortrait } from "react-icons/io";
-import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import { BiCool } from "react-icons/bi";
-import { CgProfile } from "react-icons/cg";
+// Import only used icons from react-icons packages
+import { HiMagnifyingGlass, HiChevronDown, HiMiniXMark } from "react-icons/hi2";
+import { GoHome } from "react-icons/go";
+import { BsChatLeftText } from "react-icons/bs";
+import { MdOutlineUpgrade, MdChatBubbleOutline } from "react-icons/md";
 import {
   FaRegHeart,
   FaHeart,
-  FaImage,
   FaSignal,
   FaWifi,
   FaBatteryFull,
-  FaShieldAlt,
-  FaUserCheck,
-  FaUserFriends,
-  FaComment,
-  FaSmile,
-  FaUser,
-  FaExclamationTriangle,
-  FaPray,
-  FaRegClock,
-  FaBell,
 } from "react-icons/fa";
-import { FaCheck } from "react-icons/fa6";
-import { GiBigDiamondRing } from "react-icons/gi";
+import { CgProfile } from "react-icons/cg";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-// Export all icons
+// Export only used icons
 export {
   HiMagnifyingGlass,
   HiChevronDown,
-  GoArrowLeft,
   GoHome,
   BsChatLeftText,
-  BsThreeDotsVertical,
-  BsEnvelope,
   MdOutlineUpgrade,
-  MdOutlineWork,
   MdChatBubbleOutline,
-  LiaCheckDoubleSolid,
-  GrAttachment,
-  PiPaperPlaneRightFill,
   FaRegHeart,
   FaHeart,
-  FaImage,
   FaSignal,
   FaWifi,
   FaBatteryFull,
-  CiLineHeight,
-  CiGlobe,
-  LuGraduationCap,
-  HiMiniXMark,
-  FaShieldAlt,
-  FaUserCheck,
-  FaUserFriends,
-  FaComment,
-  IoIosPhonePortrait,
-  IoChatbubbleEllipsesOutline,
-  FaSmile,
-  FaUser,
-  FaExclamationTriangle,
-  BiCool,
-  FaCheck,
-  FaPray,
-  GiBigDiamondRing,
-  FaRegClock,
   CgProfile,
-  FaBell,
+  HiMiniXMark,
   RxHamburgerMenu,
 };

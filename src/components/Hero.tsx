@@ -117,7 +117,7 @@ export function Hero() {
               /> */}
             {/* Right Content - Form */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-md">
+              <div className="w-full max-w-[30rem]">
                 <InviteForm />
               </div>
             </div>

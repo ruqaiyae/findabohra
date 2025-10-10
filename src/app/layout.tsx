@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Squada_One, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const squadaOne = Squada_One({
+  variable: "--font-squada-one",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: "400",
   display: "swap",
 });
 
@@ -71,7 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${inter.variable} antialiased`}>
+      <body className={`${squadaOne.variable} ${inter.variable} antialiased`}>
         <Header />
         {children}
         <Footer />

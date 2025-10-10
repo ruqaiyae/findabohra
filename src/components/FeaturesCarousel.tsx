@@ -1,85 +1,84 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { gsap } from "gsap";
 import { Hearts } from "./ui/Hearts";
-import FeatureDescription from "./carouselContent/FeatureDescription";
 import { carouselItems } from "@/data/carouselData";
-
-const Slide0 = dynamic(() => import("./carouselContent/Slide0"), {
-  ssr: false,
-});
-const Slide1 = dynamic(() => import("./carouselContent/Slide1"), {
-  ssr: false,
-});
-const Slide2 = dynamic(() => import("./carouselContent/Slide2"), {
-  ssr: false,
-});
-const Slide3 = dynamic(() => import("./carouselContent/Slide3"), {
-  ssr: false,
-});
-const Slide4 = dynamic(() => import("./carouselContent/Slide4"), {
-  ssr: false,
-});
-const Slide5 = dynamic(() => import("./carouselContent/Slide5"), {
-  ssr: false,
-});
+import Slide0 from "./carouselContent/Slide0";
+import Slide1 from "./carouselContent/Slide1";
+import Slide2 from "./carouselContent/Slide2";
+import Slide3 from "./carouselContent/Slide3";
+import Slide4 from "./carouselContent/Slide4";
+import Slide5 from "./carouselContent/Slide5";
 
 export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const slideRef = useRef<HTMLDivElement>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // Animation function for sliding transitions
+  const animateSlideTransition = useCallback(
+    (newIndex: number) => {
+      if (isAnimating || !slideRef.current) return;
+
+      setIsAnimating(true);
+
+      // Slide out current slide to the left
+      gsap.to(slideRef.current, {
+        x: "-100%",
+        duration: 0.8,
+        ease: "power2.inOut",
+        onComplete: () => {
+          // Update the slide content
+          setCurrentIndex(newIndex);
+
+          // Reset position to right (off-screen)
+          gsap.set(slideRef.current, { x: "100%" });
+
+          // Slide in new slide from the right
+          gsap.to(slideRef.current, {
+            x: "0%",
+            duration: 0.8,
+            ease: "power2.inOut",
+            onComplete: () => {
+              setIsAnimating(false);
+            },
+          });
+        },
+      });
+    },
+    [isAnimating]
+  );
+
+  // Initial animation on mount
+  useEffect(() => {
+    if (slideRef.current) {
+      gsap.set(slideRef.current, { x: "100%" });
+      gsap.to(slideRef.current, {
+        x: "0%",
+        duration: 0.8,
+        ease: "power2.inOut",
+      });
+    }
+  }, []);
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || isAnimating) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
-      );
+      const nextIndex =
+        currentIndex === carouselItems.length - 1 ? 0 : currentIndex + 1;
+      animateSlideTransition(nextIndex);
     }, 3000); // Change slide every 3 seconds
 
     return () => clearInterval(interval);
-  }, [isPaused]);
-
-  // Preload next slide for smoother transitions
-  // Dynamically imports the next slide component to reduce loading time
-  useEffect(() => {
-    const nextSlide = (currentIndex + 1) % carouselItems.length;
-
-    async function preloadNext() {
-      try {
-        // Dynamically import the next slide component
-        // This ensures the component is loaded before it's needed
-        switch (nextSlide) {
-          case 0:
-            await import("./carouselContent/Slide0");
-            break;
-          case 1:
-            await import("./carouselContent/Slide1");
-            break;
-          case 2:
-            await import("./carouselContent/Slide2");
-            break;
-          case 3:
-            await import("./carouselContent/Slide3");
-            break;
-          case 4:
-            await import("./carouselContent/Slide4");
-            break;
-          case 5:
-            await import("./carouselContent/Slide5");
-            break;
-        }
-      } catch (error) {
-        console.error(`Error preloading slide ${nextSlide}:`, error);
-      }
-    }
-
-    preloadNext();
-  }, [currentIndex]);
+  }, [isPaused, isAnimating, currentIndex, animateSlideTransition]);
 
   const goToSlide = (index: number) => {
-    setCurrentIndex(index);
+    if (index === currentIndex || isAnimating) return;
+
+    animateSlideTransition(index);
     setIsPaused(true); // Pause when user manually selects a slide
 
     // Resume auto-play after 5 seconds to give user time to read
@@ -103,7 +102,7 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
             Everything You Need to Find Your Perfect Match
           </h2>
@@ -113,25 +112,19 @@ export const FeaturesCarousel = React.memo(function FeaturesCarousel() {
           </p>
         </div>
 
-        {/* Carousel Content */}
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          {currentItem.id === 0 && <Slide0 />}
-          {currentItem.id === 1 && <Slide1 currentItem={currentItem} />}
-
-          {currentItem.id === 2 && <Slide2 currentItem={currentItem} />}
-
-          {currentItem.id === 3 && <Slide3 currentItem={currentItem} />}
-
-          {currentItem.id === 4 && <Slide4 currentItem={currentItem} />}
-
-          {currentItem.id === 5 && <Slide5 currentItem={currentItem} />}
-
-          {/* Right - Feature Description */}
-          <FeatureDescription currentItem={currentItem} />
+        {/* Slide Container with Animation */}
+        <div className="relative overflow-hidden">
+          <div ref={slideRef} className="w-full">
+            {(() => {
+              const slides = [Slide0, Slide1, Slide2, Slide3, Slide4, Slide5];
+              const CurrentSlide = slides[currentIndex];
+              return <CurrentSlide currentItem={currentItem} />;
+            })()}
+          </div>
         </div>
 
         {/* Carousel Indicators */}
-        <div className="flex justify-center mt-12 space-x-3 relative z-10">
+        <div className="flex justify-center space-x-3 relative z-10">
           {carouselItems.map((_, index) => (
             <button
               key={index}

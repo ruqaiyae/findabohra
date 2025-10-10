@@ -66,6 +66,7 @@ export function LogoSlideAnimation({
         style={{
           background: isSliding ? "transparent" : "rgba(255, 255, 255, 0.95)",
           backdropFilter: isSliding ? "none" : "blur(10px)",
+          fontFamily: "var(--font-squada-one)",
         }}
       >
         <AnimatedLogo onAnimationComplete={handleLogoAnimationComplete} />
