@@ -1,18 +1,26 @@
 import Image from "next/image";
-import { PhoneMockup } from "../ui/PhoneMockup";
+import FeatureDescription from "./FeatureDescription";
+import { CarouselItem } from "./typeLib";
 
-export default function Slide0() {
+type Slide0Props = {
+  currentItem: CarouselItem;
+};
+
+export default function Slide0({ currentItem }: Slide0Props) {
   return (
-    <PhoneMockup marginLeft="mx-auto" rotate="rotate-0">
-      <div className="w-full h-[90%] flex flex-col justify-center items-center px-4">
+    <div className="flex flex-col md:flex-row justify-center items-center my-12">
+      <div className="w-1/2 flex justify-center items-center">
         <Image
-          src="/welcome-feature.png"
+          src="/slide0.png"
           alt="welcome-feature"
           width={300}
           height={400}
-          className="w-full h-full object-contain"
+          className="w-110 h-110 object-contain"
         />
       </div>
-    </PhoneMockup>
+      <div className="w-1/2">
+        <FeatureDescription currentItem={currentItem} />
+      </div>
+    </div>
   );
 }

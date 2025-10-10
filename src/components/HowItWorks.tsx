@@ -114,9 +114,9 @@ export function HowItWorks() {
         </div>
 
         {/* dotted line */}
-        <DottedLine position="left-57" />
-        <DottedLine position="right-137" />
-        <DottedLine position="right-57" />
+        <DottedLine position="left-65" />
+        <DottedLine position="right-145" />
+        <DottedLine position="right-65" />
       </div>
     </section>
   );

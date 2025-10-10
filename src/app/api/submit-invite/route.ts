@@ -56,7 +56,6 @@ export async function POST(request: NextRequest) {
         console.error("Google Sheets submission failed");
         // Don't fail the request - this is optional integration
       } else {
-        console.log("Successfully submitted to Google Sheets");
       }
     } catch (error) {
       console.error("Error submitting to Google Sheets:", error);
