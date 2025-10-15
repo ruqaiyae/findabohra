@@ -27,7 +27,7 @@ export function Hero() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-15 pb-20 md:py-0 h-full md:h-[92vh] ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
             {/* Left Content */}
-            <div className="space-y-6 text-center lg:text-left">
+            <div className="space-y-4 text-center lg:text-left">
               <div>
                 <h1
                   className="text-2xl lg:text-4xl font-bold text-white leading-tight mb-4 md:mb-6"
@@ -44,7 +44,7 @@ export function Hero() {
                   Your match, your way!
                 </p>
                 <p
-                  className="text-xs md:text-base p-6 md:px-0 text-white leading-relaxed"
+                  className="text-xs md:text-base px-6 py-3 md:px-0 text-white leading-relaxed"
                   style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.8)" }}
                 >
                   FindABohra brings the Dawoodi Bohra community together with
@@ -55,11 +55,11 @@ export function Hero() {
                   className="text-xs md:text-lg font-semibold mt-2 text-white leading-relaxed"
                   style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.8)" }}
                 >
-                  Request early access - your forever could start here. 💕
+                  Request early access - your forever could start here.
                 </p>
               </div>
 
-              {/* App Download Buttons - Disabled */}
+              {/* App Download Buttons */}
               <div className="flex gap-2 items-center justify-center lg:justify-start">
                 <div className="relative w-40 h-12 sm:w-50 sm:h-15 opacity-50 cursor-not-allowed">
                   <Image
@@ -77,6 +77,36 @@ export function Hero() {
                     sizes="(max-width: 640px) 160px, 200px"
                   />
                 </div>
+              </div>
+
+              {/* Instagram Follow Button - Centered below app buttons */}
+              <div className="w-[60%] sm:w-[50%] md:w-[60%] mx-auto mt-4">
+                <a
+                  href="https://www.instagram.com/findabohra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-sm border border-white/50 rounded-lg px-3 py-2 sm:px-4 sm:py-3 hover:bg-white/20 transition-all duration-300 group"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Image
+                    src="/instagram-official.png"
+                    alt="Instagram"
+                    width={24}
+                    height={24}
+                    className="w-8 h-8 md:w-10 md:h-10"
+                  />
+                  <div className="flex flex-col text-start">
+                    <span className="text-[8px] md:text-xs font-bold text-white uppercase tracking-wide">
+                      Follow us on
+                    </span>
+                    <span
+                      className="text-xl sm:text-2xl md:text-3xl font-normal text-white"
+                      style={{ fontFamily: "Brush Script MT, cursive" }}
+                    >
+                      Instagram
+                    </span>
+                  </div>
+                </a>
               </div>
 
               {/* Statistics */}

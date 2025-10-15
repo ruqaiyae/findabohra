@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CountryDropdown } from "./CountryDropdown";
 import { Country, defaultCountry } from "@/data/countries";
 import { validateFormData, sanitizeInput } from "@/utils/validation";
@@ -33,6 +33,8 @@ export function InviteForm() {
   >("idle");
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [showTooltip, setShowTooltip] = useState(false);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   // Handle input changes with automatic sanitization and touch tracking
   const handleInputChange = (field: keyof InviteFormData, value: string) => {
@@ -57,6 +59,31 @@ export function InviteForm() {
       countryCode: country,
     }));
   };
+
+  // Tooltip handlers for mobile compatibility
+  const handleTooltipToggle = () => {
+    setShowTooltip(!showTooltip);
+  };
+
+  // Click outside handler for tooltip
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        tooltipRef.current &&
+        !tooltipRef.current.contains(event.target as Node)
+      ) {
+        setShowTooltip(false);
+      }
+    };
+
+    if (showTooltip) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showTooltip]);
 
   const formValidation = validateFormData({
     name: formData.name,
@@ -314,14 +341,23 @@ export function InviteForm() {
         </div>
 
         {/* Why Sign Up Tooltip */}
-        <div className="relative inline-block w-full">
-          <div className="group text-center">
-            <span className="text-xs text-purple-600 hover:text-purple-800 cursor-pointer font-medium decoration-solid underline decoration-purple-400 hover:decoration-purple-600 underline-offset-2 transition-all duration-200 inline-block">
+        <div className="text-center">
+          <div className="relative inline-block" ref={tooltipRef}>
+            <span
+              className="text-xs text-purple-600 hover:text-purple-800 cursor-pointer font-medium decoration-solid underline decoration-purple-400 hover:decoration-purple-600 underline-offset-2 transition-all duration-200"
+              onClick={handleTooltipToggle}
+              onMouseEnter={() => setShowTooltip(true)}
+              onMouseLeave={() => setShowTooltip(false)}
+            >
               Why sign up?
             </span>
 
             {/* Tooltip Content */}
-            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-80 bg-white border-2 border-purple-300 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 p-4">
+            <div
+              className={`absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-80 bg-white border-2 border-purple-300 rounded-lg shadow-2xl transition-all duration-300 ease-in-out z-50 p-4 ${
+                showTooltip ? "opacity-100 visible" : "opacity-0 invisible"
+              }`}
+            >
               <div className="text-xs text-gray-900 space-y-3 text-left">
                 <div className="font-bold text-gray-900 mb-4 text-center text-sm border-b-2 border-purple-200 pb-3">
                   Exclusive Benefits

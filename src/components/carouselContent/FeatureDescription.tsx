@@ -1,4 +1,4 @@
-import { CarouselItem } from "./typeLib";
+import { CarouselItem } from "@/data/carouselData";
 
 type FeatureDescriptionProps = {
   currentItem: CarouselItem;
@@ -9,7 +9,9 @@ export default function FeatureDescription({
 }: FeatureDescriptionProps) {
   return (
     <div className="mx-auto text-center md:text-left space-y-2 md:space-y-6">
-      <h3 className="text-lg md:text-3xl font-bold text-gray-900">{currentItem.title}</h3>
+      <h3 className="text-lg md:text-3xl font-bold text-gray-900">
+        {currentItem.title}
+      </h3>
       <p className="text-sm md:text-lg text-gray-600 leading-relaxed">
         {currentItem.description}
       </p>
