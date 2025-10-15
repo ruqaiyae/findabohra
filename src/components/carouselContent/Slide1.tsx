@@ -1,6 +1,6 @@
 import Image from "next/image";
 import FeatureDescription from "./FeatureDescription";
-import { CarouselItem } from "./typeLib";
+import { CarouselItem } from "@/data/carouselData";
 
 type Slide1Props = {
   currentItem: CarouselItem;

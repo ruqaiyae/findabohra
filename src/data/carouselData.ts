@@ -1,4 +1,10 @@
-export const carouselItems = [
+export type CarouselItem = {
+  id: number;
+  title: string;
+  description: string;
+};
+
+export const carouselItems: CarouselItem[] = [
   {
     id: 0,
     title: "Tradition Meets Modern",
