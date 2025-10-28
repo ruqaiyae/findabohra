@@ -40,7 +40,7 @@ export async function appendToSheet(
       return false;
     }
 
-    const response = await sheets.spreadsheets.values.append({
+    await sheets.spreadsheets.values.append({
       spreadsheetId,
       range,
       valueInputOption: "USER_ENTERED",
@@ -48,8 +48,6 @@ export async function appendToSheet(
         values,
       },
     });
-
-    console.log("Successfully appended to Google Sheets:", response.data);
     return true;
   } catch (error) {
     console.error("Error appending to Google Sheets:", error);
