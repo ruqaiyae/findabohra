@@ -4,6 +4,7 @@ import Image from "next/image";
 import { InviteForm } from "./InviteForm";
 import { LogoSlideAnimation } from "./LogoSlideAnimation";
 import { useState } from "react";
+import Link from "next/link";
 
 export function Hero() {
   const [showContent, setShowContent] = useState(false);
@@ -17,7 +18,9 @@ export function Hero() {
       <LogoSlideAnimation onSlideComplete={handleAnimationComplete} />
       <section
         id="home"
-        className={`relative bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${showContent ? "opacity-100" : "opacity-0"}`}
+        className={`relative bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+          showContent ? "opacity-100" : "opacity-0"
+        }`}
         style={{
           backgroundImage: "url('/hero_image.png')",
         }}
@@ -61,22 +64,32 @@ export function Hero() {
 
               {/* App Download Buttons */}
               <div className="flex gap-2 items-center justify-center lg:justify-start">
-                <div className="relative w-40 h-12 sm:w-50 sm:h-15 opacity-50 cursor-not-allowed">
+                <Link
+                  href="https://apps.apple.com/us/app/find-a-bohra/id6743646608"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative w-40 h-12 sm:w-50 sm:h-15"
+                >
                   <Image
                     src="/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                    alt="Download on the App Store - Coming Soon"
+                    alt="Download on the App Store"
                     fill
                     sizes="(max-width: 640px) 160px, 200px"
                   />
-                </div>
-                <div className="relative w-40 h-17 sm:w-50 sm:h-22 opacity-50 cursor-not-allowed">
+                </Link>
+                <Link
+                  href="https://play.google.com/store/apps/details?id=com.aprodence.findabohra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative w-40 h-17 sm:w-50 sm:h-22"
+                >
                   <Image
                     src="/google-play-badge.png"
-                    alt="Get it on Google Play - Coming Soon"
+                    alt="Get it on Google Play"
                     fill
                     sizes="(max-width: 640px) 160px, 200px"
                   />
-                </div>
+                </Link>
               </div>
 
               {/* Instagram Follow Button - Centered below app buttons */}
