@@ -1,6 +1,5 @@
 "use client";
 
-// import { Hearts } from "./ui/Hearts";
 import { useEffect, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,11 +13,8 @@ export function About() {
   const introRef = useRef<HTMLParagraphElement>(null);
   const goalBoxRef = useRef<HTMLDivElement>(null);
   const featureCardsRef = useRef<HTMLDivElement[]>([]);
-  const featureHighlightsRef = useRef<HTMLDivElement>(null);
   const communityBoxRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLParagraphElement>(null);
-  const heartsRef = useRef<HTMLDivElement>(null);
-  const heartsRightRef = useRef<HTMLDivElement>(null);
 
   // Initialize refs array
   const addToRefs = (el: HTMLDivElement | null) => {
@@ -229,42 +225,6 @@ export function About() {
           },
         }
       );
-
-      // // Animate hearts
-      // gsap.fromTo(
-      //   heartsRef.current,
-      //   { opacity: 0, scale: 0, rotation: -45 },
-      //   {
-      //     opacity: 1,
-      //     scale: 1,
-      //     rotation: 0,
-      //     duration: 1.6,
-      //     ease: "power2.out",
-      //     scrollTrigger: {
-      //       trigger: sectionRef.current,
-      //       start: "top 95%",
-      //       toggleActions: "play none none none",
-      //     },
-      //   }
-      // );
-
-      // gsap.fromTo(
-      //   heartsRightRef.current,
-      //   { opacity: 0, scale: 0, rotation: 45 },
-      //   {
-      //     opacity: 1,
-      //     scale: 1,
-      //     rotation: 0,
-      //     duration: 1.6,
-      //     ease: "power2.out",
-      //     delay: 0.6,
-      //     scrollTrigger: {
-      //       trigger: sectionRef.current,
-      //       start: "top 95%",
-      //       toggleActions: "play none none none",
-      //     },
-      //   }
-      // );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -323,10 +283,7 @@ export function About() {
             </div>
 
             {/* Feature Highlights */}
-            <div
-              ref={featureHighlightsRef}
-              className="space-y-6 w-[85%] md:w-[96%] mx-auto"
-            >
+            <div className="space-y-6 w-[85%] md:w-[96%] mx-auto">
               <div className="grid gap-4">
                 {/* Culturally Aligned */}
                 <div
@@ -451,18 +408,6 @@ export function About() {
           </div>
         </div>
       </div>
-
-      {/* Decorative hearts */}
-      {/* <div ref={heartsRef} className="fixed bottom-0 md:top-50 left-0">
-        <Hearts scale="scale-x-[-1]" />
-      </div>
-
-      <div
-        ref={heartsRightRef}
-        className="fixed top-5 md:top-auto md:bottom-0 right-0"
-      >
-        <Hearts />
-      </div> */}
     </section>
   );
 }

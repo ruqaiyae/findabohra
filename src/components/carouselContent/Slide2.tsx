@@ -12,7 +12,7 @@ export default function Slide2({ currentItem }: Slide2Props) {
       <div className="w-1/2 flex justify-center items-center">
         <Image
           src="/slide2.png"
-          alt=""
+          alt="See who likes you feature"
           width={300}
           height={400}
           className="w-110 h-110 object-contain"

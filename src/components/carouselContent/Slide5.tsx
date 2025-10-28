@@ -2,11 +2,11 @@ import Image from "next/image";
 import FeatureDescription from "./FeatureDescription";
 import { CarouselItem } from "@/data/carouselData";
 
-type Slide6Props = {
+type Slide5Props = {
   currentItem: CarouselItem;
 };
 
-export default function Slide5({ currentItem }: Slide6Props) {
+export default function Slide5({ currentItem }: Slide5Props) {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center my-12">
       <div className="w-1/2 flex justify-center items-center">
